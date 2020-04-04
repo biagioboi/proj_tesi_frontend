@@ -1,0 +1,2470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title> Planning / Simulation </title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+	<!--<style>
+              a:hover {
+  				background-color: #22bb84;
+			  }
+              </style>-->
+              
+             <!--<style>
+             testo { text-align:start;
+			  
+			  }
+			  
+              </style>-->
+              
+	
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <img src="img/oee1w.png" width="100" height="45">
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        	<img src="img/industryw.png" width="70" height="70">
+     	</a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading"> OEE AGGREGATE </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="OEEsuAggregatodiMacchine.html" target="_blank" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-stopwatch"></i> <!-- fa-clock, fa-percentage, fa-percent -->
+          <span> OEE ON AGGREGATE OF MACHINES </span>
+        </a>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <!--<li class="nav-item">
+        <a class="nav-link collapsed" href="performance.html" target="_blank" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Performance</span>
+        </a>
+      </li>-->
+      
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <!--<li class="nav-item">
+        <a class="nav-link collapsed" href="quality.html" target="_blank" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-star"></i>
+          <span>Quality</span>
+        </a>
+      </li>-->
+
+      <!-- Divider -->
+      <hr class="sidebar-divider"> <!-- VEDI QUA -->
+
+      <!-- Heading -->
+      <div class="sidebar-heading"> PLANNING / SIMULATION </div>
+      
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="nuovoindex.html" target="_blank" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-chart-line"></i> <!-- fa-chart-area, fa-chart-pie, fa-chart-bar, fa-clock, fa-percentage, fa-percent -->
+          <span> PLANNING / SIMULATION </span>
+        </a>
+      </li>
+      
+       <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <!--<div class="sidebar-heading"> PRODUCTION </div>-->
+
+	  <!-- Nav Item - Charts -->
+      <!--<li class="nav-item">
+        <a class="nav-link" href="totalProductivity.html" target="_blank">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Total productivity</span></a>
+      </li>-->
+
+      <!-- Nav Item - Tables 
+      <li class="nav-item">
+        <a class="nav-link" href="TotalProductionReport.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Total productivity</span></a>
+      </li>-->
+
+      <!-- Divider -->
+      <!--<hr class="sidebar-divider d-none d-md-block">-->
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <!--<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">-->
+
+		  <!-- Topbar Navbar -->
+          <!--<ul class="navbar-nav ml-auto">-->
+
+           
+              
+              
+           <!-- </li>-->
+
+
+
+            
+
+            <!--<div class="topbar-divider d-none d-sm-block"></div>-->
+
+           
+
+          <!--</ul>-->
+
+        <!--</nav>-->
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+		<br>
+
+    
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    	<h1 class="h1 mb-0 font-weight-bold text-gray-900 text-uppercase" style="font-family: 'New York'"><font color="#E74A3B"> Planning / Simulation        </font></h1>
+		<button id="share" onClick="show()" type="button" class="btn btn-success btn-circle btn-lg" href=""><i class="fas fa-plus shadow"></i></button>
+        
+    </div>
+   
+      	
+	<!-- Pie Chart -->
+    <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div1">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementUno()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!-- <div class="card bg-success shadow h-100 py-2"> -->
+                <a href="DettagliOeeM1NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center"> -->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 1   
+
+                      <img src="img/img-machine/macchina1.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                        <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 92%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                     <!-- </div> -->
+                      
+                       </div>
+                       
+                    </div>
+                 <!-- </div> -->
+                </div>
+                </a>
+              </div>
+            </div>
+           
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div2">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementDue()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-warning shadow h-100 py-2">-->
+				<a href="DettagliOeeM2NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 2 
+                      <img src="img/img-machine/macchina2.png" width="100" height="100"></img> <sup><img src="img/img-status-machine/warning.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 60%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                     <!-- </div>-->
+                      	
+                        </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div3">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementTre()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM3NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                 <!-- <div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 3 
+                      <img src="img/img-machine/macchina3.png" width="100" height="100"></img><sup><img src="img/img-status-machine/productivity.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 85%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                     <!-- </div>-->
+                      
+                      </div>
+                      
+                    </div>
+
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div4">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementQuattro()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-warning shadow h-100 py-2">-->
+                <a href="DettagliOeeM4NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                 <!-- <div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 4 
+                      <img src="img/img-machine/macchina4.png" width="100" height="100"></img><sup><img src="img/img-status-machine/clock.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 55%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+
+                      
+                      </div>
+                      
+                    </div>
+
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div5">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementCinque()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--div class="card bg-warning shadow h-100 py-2">-->
+                <a href="DettagliOeeM5NuovoIndex.html" target="_blank">
+                <div class="card-body">
+
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 5 
+                      <img src="img/img-machine/macchina5.png" width="100" height="100"></img><sup><img src="img/img-status-machine/warning.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 50%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+
+                      
+                      </div>
+                      
+                    </div>
+
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div6">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementSei()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button><!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM6NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 6 
+                      <img src="img/img-machine/macchina6.png" width="100" height="100"></img><sup><img src="img/img-status-machine/change.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 70%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+
+                      
+                      </div>
+                      
+                    </div>
+
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div7">
+              <div class="btn btn-danger shadow py-2"><button id="remove" onClick="removeElementSette()" class="btn btn-danger btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-danger shadow h-100 py-2">-->
+                <a href="DettagliOeeM7NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 7 
+                      <img src="img/img-machine/macchina7.png" width="100" height="100"></img><sup><img src="img/img-status-machine/brokenblack.png" width="30" height="30" style="margin-bottom:40px"</img>></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> FAILURE </p></div>
+
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 45%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div8">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementOtto()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM8NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                 <!-- <div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 8 
+                      <img src="img/img-machine/macchina8.png" width="100" height="100"></img><sup><img src="img/img-status-machine/productivity.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 92%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div9">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementNove()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM9NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                 <!-- <div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 9 
+                      <img src="img/img-machine/macchina9.png" width="100" height="100"></img><sup><img src="img/img-status-machine/productivity.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 95%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div10">
+              <div class="btn btn-danger shadow py-2"><button id="remove" onClick="removeElementDieci()" class="btn btn-danger btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-danger shadow h-100 py-2">-->
+                <a href="DettagliOeeM10NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 10 
+                      <img src="img/img-machine/macchina7.png" width="100" height="100"></img><sup><img src="img/img-status-machine/brokenblack.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> FAILURE </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 30%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div12">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementDodici()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-warning shadow h-100 py-2">-->
+                <a href="DettagliOeeM12NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 12 
+                      <img src="img/img-machine/macchina5.png" width="100" height="100"></img><sup><img src="img/img-status-machine/warning.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 50%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div> 
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div13">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementTredici()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM13NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 13 
+                      <img src="img/img-machine/macchina1.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 92%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                     <!-- </div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>
+            
+             <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div14">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementQuattordici()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-warning shadow h-100 py-2">-->
+				<a href="DettagliOeeM14NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 14 
+                      <img src="img/img-machine/macchina2.png" width="100" height="100"></img> <sup><img src="img/img-status-machine/warning.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 60%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                 <!-- </div>-->
+                </div>
+                </a>
+              </div>
+            </div>  
+            
+            
+             <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div15">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementQuindici()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM15NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 15 
+                      <img src="img/img-machine/macchina3.png" width="100" height="100"></img><sup><img src="img/img-status-machine/productivity.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 85%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div16">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementSedici()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-warning shadow h-100 py-2">-->
+                <a href="DettagliOeeM16NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 16 
+                      <img src="img/img-machine/macchina4.png" width="100" height="100"></img><sup><img src="img/img-status-machine/clock.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 55%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div17">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementDiciassette()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-warning shadow h-100 py-2">-->
+                <a href="DettagliOeeM17NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 17 
+                      <img src="img/img-machine/macchina5.png" width="100" height="100"></img><sup><img src="img/img-status-machine/warning.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 50%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div18">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementDiciotto()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM18NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 18 
+                      <img src="img/img-machine/macchina6.png" width="100" height="100"></img><sup><img src="img/img-status-machine/change.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 70%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div19">
+              <div class="btn btn-danger shadow py-2"><button id="remove" onClick="removeElementDiciannove()" class="btn btn-danger btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-danger shadow h-100 py-2">-->
+                <a href="DettagliOeeM19NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                 <!-- <div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 19 
+                      <img src="img/img-machine/macchina7.png" width="100" height="100"></img><sup><img src="img/img-status-machine/brokenblack.png" width="30" height="30" style="margin-bottom:40px"</img>></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> FAILURE </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 45%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                 <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>   
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div20">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementVenti()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM20NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                 <!-- <div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 20 
+                      <img src="img/img-machine/macchina8.png" width="100" height="100"></img><sup><img src="img/img-status-machine/productivity.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 92%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                     <!-- </div>-->
+                      
+                      </div>
+                      
+                    </div>
+                 <!-- </div> -->
+                </div>
+                </a>
+              </div>
+            </div>  
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div21">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementVentuno()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button><!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM21NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 21 
+                      <img src="img/img-machine/macchina9.png" width="100" height="100"></img><sup><img src="img/img-status-machine/productivity.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 95%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                     <!-- </div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div> 
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div22">
+              <div class="btn btn-danger shadow py-2"><button id="remove" onClick="removeElementVentidue()" class="btn btn-danger btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-danger shadow h-100 py-2">-->
+                <a href="DettagliOeeM22NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 22 
+                      <img src="img/img-machine/macchina7.png" width="100" height="100"></img><sup><img src="img/img-status-machine/brokenblack.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> FAILURE </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 30%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                     <!-- </div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>  
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div23">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementVentitre()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-warning shadow h-100 py-2">-->
+                <a href="DettagliOeeM23NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 23 
+                      <img src="img/img-machine/macchina5.png" width="100" height="100"></img><sup><img src="img/img-status-machine/warning.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 50%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div> 
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div24">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementVentiquattro()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM24NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 24 
+                      <img src="img/img-machine/macchina1.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 92%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>
+            
+	<!-- Add new Machine -->
+    <!--<div class="row"> <!-- style="background-color:#c5c5c5" -->
+           
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div25" style="visibility:hidden" class="row">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementVenticinque()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM25NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 25
+                      <img src="img/img-machine/macchina7.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 85%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>
+            
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div26" style="visibility:hidden" class="row">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementVentisei()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM26NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                 <!-- <div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 26
+                      <img src="img/img-machine/macchina8.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 75%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div27" style="visibility:hidden" class="row">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementVentisette()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM27NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 27
+                      <img src="img/img-machine/macchina4.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 55%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                     <!-- </div>-->
+                      
+                      </div>
+                      
+                    </div>
+                 <!-- </div>-->
+                </div>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div28" style="visibility:hidden" class="row">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementVentotto()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM28NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 28
+                      <img src="img/img-machine/macchina2.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 80%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div29" style="visibility:hidden" class="row">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementVentinove()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM29NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                 <!-- <div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 29
+                      <img src="img/img-machine/macchina3.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 50%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div30" style="visibility:hidden" class="row">
+              <div class="btn btn-warning shadow py-2"><button id="remove" onClick="removeElementTrenta()" class="btn btn-warning btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM30NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 30
+                      <img src="img/img-machine/macchina5.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> WARNING </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 50%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                 <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div31" style="visibility:hidden" class="row">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementTrentuno()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM31NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                 <!-- <div class="row no-gutters align-items-center"> -->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 31
+                      <img src="img/img-machine/macchina1.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 92%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                     <!-- </div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4" id="div32" style="visibility:hidden" class="row">
+              <div class="btn btn-success shadow py-2"><button id="remove" onClick="removeElementTrentadue()" class="btn btn-success btn-circle btn-lg" style="float: right"><i class="fas fa-times-circle shadow"></i></button> <!--<div class="card bg-success shadow h-100 py-2">-->
+                <a href="DettagliOeeM32NuovoIndex.html" target="_blank">
+                <div class="card-body">
+                  <!--<div class="row no-gutters align-items-center">-->
+                    <div class="col mr-2">
+                    
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 32
+                      <img src="img/img-machine/macchina8.png" width="100" height="100"></img><sup><img src="img/img-status-machine/okblackgreen.png" width="30" height="30" style="margin-bottom:40px"></img></sup></img>
+                      
+                      <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"><p> RUN </p></div>
+						<!--<div class="row no-gutters align-items-center">-->
+                        <div class="col-auto">
+                          <div class="h6 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 50%</div>
+                        </div>
+                        <div class="col">
+                         <div class="progress progress-sm mr-2">
+                         <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        
+
+                         </div>
+                        </div>
+                      <!--</div>-->
+                      
+                      </div>
+                      
+                    </div>
+                  <!--</div>-->
+                </div>
+                </a>
+              </div>
+            </div>
+            
+	<!--</div> <!-- div che chiude la class="row" -->            
+           
+               
+            
+			 
+            <!--<div class="col-xl-3 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown 
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-success">
+                  <a href="index.html">
+                  <h6 class="h5 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 12
+                  <div class="row no-gutters align-items-center">
+                      <div class="col-auto">
+                       <div class="h5 mb-0 mr-3 font-weight-bold text-gray-900"> OEE 90%</div>
+                       <br><div class="progress progress-sm mr-2">
+                       			<div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 90%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                      		</div>
+                      </div>
+                      <!--<div class="col">
+                       <div class="progress progress-sm mr-2">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                       </div>
+                      </div>
+                     </div>
+                  </h6>
+                  </a>
+                </div>
+                <!-- Card Body 
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2">
+                    <canvas id="myPieChart12"></canvas>
+                  </div>
+                  <!--<div class="mt-4 text-center medium font-weight-bold">
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-primary"></i> 55% A
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-success"></i> 30% P
+                    </span>
+                    <span class="mr-2">
+                      <i class="fas fa-circle text-info"></i> 15% Q
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>-->
+
+	</div>   
+
+
+          <!-- Content Row -->
+          <!--<div class="row">-->
+
+            <!-- Content Column -->
+            <!--<div class="col-lg-6 mb-4">-->
+
+              
+
+              <!-- Color System -->
+              <!--<div class="row">
+                
+                
+                
+                
+                
+                
+              <!--</div>-->
+
+           <!-- </div> -->
+
+          <!--</div> -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+
+<!--<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart");
+var myPieChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["OEE", "Performance Remaining OEE", "", "", ""],
+    datasets: [{
+      data: [74, 26, , ],
+      backgroundColor: ['#36b9cc', '#cccccc', '#e74a3b', ''],
+      hoverBackgroundColor: ['#36b9cc', '#cccccc', '#e74a3b', '#858796'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart2");
+var myPieChart2 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Percentual Remaining Availability", ""],
+    datasets: [{
+      data: [87, 13, ],
+      backgroundColor: ['#1cc88a', '#cccccc', ''],
+      hoverBackgroundColor: ['#1cc88a', '#cccccc', ''],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart3");
+var myPieChart3 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Performance", "Percentual Performance Remaining", ""],
+    datasets: [{
+      data: [93, 7, ],
+      backgroundColor: ['#f6c23e', '#cccccc', ''],
+      hoverBackgroundColor: ['#f6c23e', '#cccccc', ''],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart4");
+var myPieChart4 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Quality", "Percentual Remaining Quality", ""],
+    datasets: [{
+      data: [91, 9, ],
+      backgroundColor: ['#e74a3b', '#cccccc', ''],
+      hoverBackgroundColor: ['#e74a3b', '#cccccc', ''],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>-->
+
+<!--<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart");
+var myPieChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [55, 30, 15],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart2");
+var myPieChart2 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [50, 25, 25],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart3");
+var myPieChart3 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [20, 60, 20],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart4");
+var myPieChart4 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [60, 30, 10],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart5");
+var myPieChart5 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [45, 30, 25],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart6");
+var myPieChart6 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [55, 30, 15],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart7");
+var myPieChart7 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [65, 25, 10],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart8");
+var myPieChart8 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [55, 30, 15],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart9");
+var myPieChart9 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [55, 35, 10],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart10");
+var myPieChart10 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [55, 40, 5],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart11");
+var myPieChart11 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [65, 25, 10],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>
+
+<script>
+Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#858796';
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart12");
+var myPieChart12 = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ["Availability", "Performance", "Quality"],
+    datasets: [{
+      data: [55, 30, 15],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
+</script>-->
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
+	
+	<script>
+	
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
+			authDomain: "progettotesi-39e44.firebaseapp.com",
+			databaseURL: "https://progettotesi-39e44.firebaseio.com",
+			projectId: "progettotesi-39e44",
+			storageBucket: "progettotesi-39e44.appspot.com",
+			messagingSenderId: "685387983144",
+			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
+			measurementId: "G-312CT07RMJ"
+		};
+  	
+		// Initialize Firebase
+  		firebase.initializeApp(firebaseConfig);
+	
+		//accedo al database  	
+        var db = firebase.firestore();
+  	
+		//accedo alla collezione machine1 leggo il documento a cui corrisponde e poi con onSnapshot posso tenere traccia delle eventuali modifiche, 		          aggiunte e cancellazioni fatte nel documento
+		var container = document.getElementById("container");
+		db.collection("machine1").doc("good_beatings").onSnapshot(function(doc) {
+			
+		//per visualizzare i dati 
+		console.log("Current data: ", doc.data());	
+		for(var i in doc.data())
+			container.innerHTML += doc.data()[i] + "<br>";
+	
+
+		});
+	
+    </script>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
+	
+ <script>
+    	
+		//Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
+			authDomain: "progettotesi-39e44.firebaseapp.com",
+			databaseURL: "https://progettotesi-39e44.firebaseio.com",
+			projectId: "progettotesi-39e44",
+			storageBucket: "progettotesi-39e44.appspot.com",
+			messagingSenderId: "685387983144",
+			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
+			measurementId: "G-312CT07RMJ"
+		};
+  	
+		// Initialize Firebase
+  		firebase.initializeApp(firebaseConfig);
+	
+		//accedo al database  	
+        var db = firebase.firestore();
+   		
+		//accedo alla collezione machine1 leggo il documento a cui corrisponde e poi con onSnapshot posso tenere traccia delle eventuali modifiche, 		          aggiunte e cancellazioni fatte nel documento
+		  var container = document.getElementById("lineChart");
+		  db.collection("machine").doc("lineChart").onSnapshot(function(doc) {
+		
+		//per visualizzare i dati 
+		console.log("Current data: ", doc.data());	
+		for(var i in doc.data())
+			container.innerHTML += doc.data()[i] + "<br>";
+			//console.log(doc.data().good_beatings['0']['1']+" "+ 100-doc.data().good_beatings['0']['1'])
+			var ctx = document.getElementById("lineChart");
+			var lineChart = new Chart(document.getElementById("lineChart"), {
+			  type: 'line',
+			  data: {
+				labels: ["00:00", "03:00", "04:00", "05:50", "06:00", "08:00", "12:00", "15:00", "18:00", "22:00"],
+				datasets: [{ 
+				data: [doc.data().expected_beatings['0'], doc.data().expected_beatings['1'], doc.data().expected_beatings['2'], doc.data().expected_beatings['3'], doc.data().expected_beatings['4'], doc.data().expected_beatings['5'], doc.data().expected_beatings['6'], doc.data().expected_beatings['7'], doc.data().expected_beatings['8'], doc.data().expected_beatings['9'],],
+				label: "EXPECTED_BEATINGS",
+				borderColor: "#4E73DF",
+				fill: false
+			  }, { 
+				data: [doc.data().pieces_actually_produced['0'], doc.data().pieces_actually_produced['1'], doc.data().pieces_actually_produced['2'], doc.data().pieces_actually_produced['3'], doc.data().pieces_actually_produced['4'], doc.data().pieces_actually_produced['5'], doc.data().pieces_actually_produced['6'], doc.data().pieces_actually_produced['7'], doc.data().pieces_actually_produced['8'], doc.data().pieces_actually_produced['9'],],
+				label: "PIECES_ACTUALLY_PRODUCED",
+				borderColor: "#36B9CC",
+				fill: false
+			  }, { 
+				data: [doc.data().good_beatings['0'], doc.data().good_beatings['1'], doc.data().good_beatings['2'], doc.data().good_beatings['3'], doc.data().good_beatings['4'], doc.data().good_beatings['5'], doc.data().good_beatings['6'], doc.data().good_beatings['7'], doc.data().good_beatings['8'], doc.data().good_beatings['9'],],
+				label: "GOOD_BEATINGS",
+				borderColor: "#1CC88A",
+				fill: false
+			  }, { 
+				data: [doc.data().bad_beatings['0'], doc.data().bad_beatings['1'], doc.data().bad_beatings['2'], doc.data().bad_beatings['3'], doc.data().bad_beatings['4'], doc.data().bad_beatings['5'], doc.data().bad_beatings['6'], doc.data().bad_beatings['7'], doc.data().bad_beatings['8'], doc.data().losses['9'],],
+				label: "BAD_BEATINGS",
+				borderColor: "#E74A3B",
+				fill: false
+			  }, { 
+				data: [doc.data().losses['0'], doc.data().losses['1'], doc.data().losses['2'], doc.data().losses['3'], doc.data().losses['4'], doc.data().losses['5'], doc.data().losses['6'], doc.data().losses['7'], doc.data().losses['8'], doc.data().losses['9'],],
+				label: "LOSSES",
+				borderColor: "#F6C23E",
+				fill: false
+			  }
+			]
+		  },
+		  options: {
+			title: {
+			  display: true,
+			  text: 'Production Performance'
+			}
+		  }
+		});
+		  
+		  });
+	
+    </script>	
+    
+	<!--<script>
+		function add() {
+ 			var btn = document.createElement("div");
+ 			document.body.appendChild(btn);
+		}
+	</script>-->
+    
+    <!--<script>
+		document.body.onload = addElement;
+
+		function addElement() { 
+		  // crea un nuovo elemento div
+		  var newDiv = document.createElement("div"); 
+		  // ed assegnargli un contenuto
+		  //var newContent = document.createTextNode("div"); 
+		  // aggiungi il nodo di testo al div appena creato
+		  newDiv.appendChild(newDiv);  
+		
+		  // aggiungi l'elemento appena creato e il suo contenuto nel DOM
+		  var currentDiv = document.getElementById("div1"); 
+		  document.body.insertBefore(newDiv, currentDiv); 
+		}
+		
+	</script>-->
+    
+	<!--<script>
+	
+		function addElement() {
+			{
+				document.getElementById("div2").style.display="block";
+		  
+			}
+				alert("Do you want to add a new machine?");
+		}
+		
+    </script>-->
+    
+   	<!--<script>
+		
+		function show() {
+			var count;
+			for(count = 1; count.lenght(); count++) {
+				document.getElementById('share'+count+'').style.display = 'block';
+			} 
+		};
+		
+	</script>-->
+    
+			<script>
+            
+                document.getElementById("share").onclick=function show(){
+                    event.preventDefault();
+                    document.getElementById("div25").style.visibility='visible';
+               /** 	document.getElementById("div26").style.visibility='visible';
+               		document.getElementById("div27").style.visibility='visible';
+					document.getElementById("div28").style.visibility='visible';
+					document.getElementById("div29").style.visibility='visible';
+					document.getElementById("div30").style.visibility='visible';
+					document.getElementById("div31").style.visibility='visible';
+					document.getElementById("div32").style.visibility='visible'; **/
+				};
+	
+			</script>
+    
+	<!--<script>
+		function removeElement() {
+		  var x = document.getElementById("div1");
+		  if (x.style.display === "none") {
+			x.style.display = "block";
+		  } else {
+			x.style.display = "none";
+		  }
+		  alert("Vuoi Cancellare la macchina?");
+		 
+		}
+	</script>-->
+    
+    <script>
+	
+    	function removeElementUno() { 
+			{
+				document.getElementById("div1").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementDue() { 
+			{
+				document.getElementById("div2").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementTre() { 
+			{
+				document.getElementById("div3").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementQuattro() { 
+			{
+				document.getElementById("div4").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementCinque() { 
+			{
+				document.getElementById("div5").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementSei() { 
+			{
+				document.getElementById("div6").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementSette() { 
+			{
+				document.getElementById("div7").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementOtto() { 
+			{
+				document.getElementById("div8").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementNove() { 
+			{
+				document.getElementById("div9").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementDieci() { 
+			{
+				document.getElementById("div10").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementUndici() { 
+			{
+				document.getElementById("div11").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementDodici() { 
+			{
+				document.getElementById("div12").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementTredici() { 
+			{
+				document.getElementById("div13").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementQuattordici() { 
+			{
+				document.getElementById("div14").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementQuindici() { 
+			{
+				document.getElementById("div15").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementSedici() { 
+			{
+				document.getElementById("div16").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementDiciassette() { 
+			{
+				document.getElementById("div17").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementDiciotto() { 
+			{
+				document.getElementById("div18").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementDiciannove() { 
+			{
+				document.getElementById("div19").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementVenti() { 
+			{
+				document.getElementById("div20").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementVentuno() { 
+			{
+				document.getElementById("div21").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementVentidue() { 
+			{
+				document.getElementById("div22").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementVentitre() { 
+			{
+				document.getElementById("div23").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementVentiquattro() { 
+			{
+				document.getElementById("div24").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementVenticinque() { 
+			{
+				document.getElementById("div25").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementVentisei() { 
+			{
+				document.getElementById("div26").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementVentisette() { 
+			{
+				document.getElementById("div27").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementVentotto() { 
+			{
+				document.getElementById("div28").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementVentinove() { 
+			{
+				document.getElementById("div29").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementTrenta() { 
+			{
+				document.getElementById("div30").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementTrentuno() { 
+			{
+				document.getElementById("div31").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+    
+    <script>
+	
+    	function removeElementTrentadue() { 
+			{
+				document.getElementById("div32").style.display="none";
+			}
+				alert("Do you want to cancel the machine?");
+		}
+		
+    </script>
+ 
+ 
+</body>
+
+</html>

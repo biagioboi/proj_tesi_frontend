@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title> Chart Time / Production Machine 1 </title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <img src="img/oee1w.png" width="100" height="45">
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        	<img src="img/industryw.png" width="70" height="70">
+     	</a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <!--<div class="sidebar-heading"> OEE </div>-->
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <!--<li class="nav-item">
+        <a class="nav-link collapsed" href="availability.html" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-stopwatch"></i> <!-- fa-clock 
+          <span>Availability</span>
+        </a>
+      </li>-->
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <!--<li class="nav-item">
+        <a class="nav-link collapsed" href="performance.html" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Performance</span>
+        </a>
+      </li>-->
+      
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <!--<li class="nav-item">
+        <a class="nav-link collapsed" href="quality.html" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-star"></i>
+          <span>Quality</span>
+        </a>
+      </li>-->
+
+      <!-- Divider -->
+      <!--<hr class="sidebar-divider">-->
+
+      <!-- Heading -->
+      <!--<div class="sidebar-heading"> PRODUCTION </div>-->
+
+	  <!-- Nav Item - Charts -->
+      <!--<li class="nav-item">
+        <a class="nav-link" href="TotalProductionReport.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Total productivity</span></a>
+      </li>-->
+
+      <!-- Nav Item - Tables 
+      <li class="nav-item">
+        <a class="nav-link" href="TotalProductionReport.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Total productivity</span></a>
+      </li>-->
+
+      <!-- Divider -->
+      <!--<hr class="sidebar-divider d-none d-md-block">-->
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <!--<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">-->
+
+		  <!-- Topbar Navbar -->
+          <!--<ul class="navbar-nav ml-auto">-->
+
+           
+              
+              
+           <!-- </li>-->
+
+
+
+            
+
+            <!--<div class="topbar-divider d-none d-sm-block"></div>-->
+
+           
+
+          <!--</ul>-->
+
+        <!--</nav>-->
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+		<br>
+        
+
+		<!-- Content Row 
+        <div class="row">
+
+            <div class="col-xl-8 col-lg-7">
+              
+              <!-- Project Card Example 
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Production Report</h6>
+                </div>
+                <div class="card-body">
+                  <h4 class="small font-weight-bold">Machine 1<span class="float-right">92%</span></h4>
+                  <div class="progress mb-4">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <h4 class="small font-weight-bold">Machine 2<span class="float-right">85%</span></h4>
+                  <div class="progress mb-4">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <h4 class="small font-weight-bold">Machine 3<span class="float-right">100%</span></h4>
+                  <div class="progress mb-4">
+                   <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>				                  
+                   </div>
+                   <h4 class="small font-weight-bold">Machine 4<span class="float-right">65%</span></h4>
+                  <div class="progress mb-4">
+                   <div class="progress-bar bg-warning" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>				                  
+                   </div>
+                   <h4 class="small font-weight-bold">Machine 5<span class="float-right">55%</span></h4>
+                  <div class="progress mb-4">
+                   <div class="progress-bar bg-warning" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>				                  
+                   </div>
+                   <h4 class="small font-weight-bold">Machine 6<span class="float-right">50%</span></h4>
+                  <div class="progress mb-4">
+                   <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>				                  
+                   </div>
+                   <h4 class="small font-weight-bold">Machine 7<span class="float-right">45%</span></h4>
+                  <div class="progress mb-4">
+                   <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>				                  
+                   </div>
+                   <h4 class="small font-weight-bold">Machine 8<span class="float-right">30%</span></h4>
+                  <div class="progress mb-4">
+                   <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>				                  
+                   </div>
+                   <h4 class="small font-weight-bold">Machine 9<span class="float-right">22%</span></h4>
+                  <div class="progress mb-4">
+                   <div class="progress-bar bg-danger" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>				                  
+                   </div>
+                </div>
+              </div>
+             </div>
+             
+      </div> -->
+      
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    	<h1 class="h1 mb-0 font-weight-bold text-gray-900 text-uppercase"> Time / Production Chart Machine 1 </h1>
+    
+    			<!--<div class="my-2">
+                  <a href="chartTimeProductionMachine1.html" target="_blank" class="btn btn-dark btn-icon-split btn-lg">
+                    <span class="text text-uppercase font-weight-bold"	> Time / Production Charts </span>
+                    <span class="icon text-white">
+                      <i class="fas fa-chart-bar font-weight-bold"></i>
+                    </span>
+                  </a>
+        		</div>-->
+    </div>
+    
+    <!-- Pie Chart -->
+    <div class="row">
+      	
+  			<!-- Pie Chart -->
+            <div class="col-xl-12 col-lg-5" style="float:left">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-dark">
+                  <h6 class="h4 mb-0 mr-3 font-weight-bold text-white text-uppercase"> Time / Production Chart </h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+					 <canvas id="barChartProduction" width="500" height="450"></canvas>
+                     <!--<div id="chartContainer" style="height: 300px; width: 100%;"></div>-->
+                     <!--<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>-->
+                </div>
+                 
+                </div>
+              </div>
+              
+            <!-- Pie Chart -->
+            <div class="col-xl-12 col-lg-5" style="float:left">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-dark">
+                  <h6 class="h4 mb-0 mr-3 font-weight-bold text-white text-uppercase"> Machine State </h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                	<canvas id="machinestate" width="500" height="450"></canvas>
+                 	<!--<canvas id="bar-chart-grouped_1" width="800" height="450"></canvas>-->
+                </div>
+                </div>
+              </div>
+              
+              <!-- <div class="col-xl-4 col-lg-5" style="float:left">
+          	   	<div class="card shadow mb-4">
+              		<!-- Card Header - Dropdown 	CHIUDI COMMENTO QUI
+              		 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-dark">
+               		<!--<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">   CHIUDI COMMENTO QUI
+                		<h6 class="h4 mb-0 mr-3 font-weight-bold text-white text-uppercase"> Legend </h6>
+               		</div>
+                      <div>
+                      	<ul id="menu"><br>
+                            <i class="fas fa-circle text-success"> MACHINE ON BUT DOESN'T PRODUCE </i>
+                            <i class="fas fa-circle text-success"> MACHINE ON AND PRODUCE </i>
+                            <i class="fas fa-circle text-success"> MACHINE ON BUT WAITING FOR MOULD CHANGE </i>
+                            <i class="fas fa-circle text-warning"> WARNING MACHINE </i>
+                            <i class="fas fa-circle text-warning"> MACHINE WAITING FOR MATERIAL </i>
+                            <i class="fas fa-circle text-danger">  MALFUNCTIONING MACHINE </i>
+                            <i class="fas fa-circle text-secondary"> MACHINE OFF </i>
+					  	</ul>
+                      </div>
+          		</div>
+        	   </div>-->
+        
+    </div>
+  			  
+  		<!-- Content Row -->
+          <!--<div class="row">-->
+
+            <!-- Content Column -->
+            <!--<div class="col-lg-6 mb-4">-->
+
+              
+
+              <!-- Color System -->
+              <!--<div class="row">
+                
+                
+                
+                
+                
+                
+              <!--</div>-->
+
+           <!-- </div> -->
+
+          <!--</div> -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  
+   
+   
+    <!-- The core Firebase JS SDK is always required and must be listed first 
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
+	
+    <script>
+    //Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
+			authDomain: "progettotesi-39e44.firebaseapp.com",
+			databaseURL: "https://progettotesi-39e44.firebaseio.com",
+			projectId: "progettotesi-39e44",
+			storageBucket: "progettotesi-39e44.appspot.com",
+			messagingSenderId: "685387983144",
+			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
+			measurementId: "G-312CT07RMJ"
+		};
+  	
+		// Initialize Firebase
+  		firebase.initializeApp(firebaseConfig);
+	
+		//accedo al database  	
+        var db = firebase.firestore();
+		db.collection("machine").doc("machine1").onSnapshot(function(doc) {	
+	
+		for(var i in doc.data())
+		
+		new Chart(document.getElementById("barChart"), {
+		type: 'bar',
+		data: {
+		  labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00","11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",],
+		  datasets: [
+			{
+			  label: "EXPECTED_BEATINGS",
+			  backgroundColor: "#4E73DF",
+			  data: [25, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 50, 100, 130, 230, 330, 430, 460, 500, 30, 60, 90, 120, 150,]
+			}, 
+			{
+			  label: "PIECES_ACTUALLY_PRODUCED",
+			  backgroundColor: "#1CC88A",
+			  data: [doc.data().pieces_actually_produced['0'], doc.data().pieces_actually_produced['1'], doc.data().pieces_actually_produced['2'], doc.data().pieces_actually_produced['3'], doc.data().pieces_actually_produced['4'], doc.data().pieces_actually_produced['5'], doc.data().pieces_actually_produced['6'], doc.data().pieces_actually_produced['7'], doc.data().pieces_actually_produced['8'], doc.data().pieces_actually_produced['9'], doc.data().pieces_actually_produced['10'], doc.data().pieces_actually_produced['11'], doc.data().pieces_actually_produced['12'], doc.data().pieces_actually_produced['13'], doc.data().pieces_actually_produced['14'], doc.data().pieces_actually_produced['15'], doc.data().pieces_actually_produced['16'], doc.data().pieces_actually_produced['17'], doc.data().pieces_actually_produced['18'], doc.data().pieces_actually_produced['19'], doc.data().pieces_actually_produced['20'], doc.data().pieces_actually_produced['21'], doc.data().pieces_actually_produced['22'], doc.data().pieces_actually_produced['23'],]
+			},
+		/** {
+			  label: "GOOD_PRODUCED",
+			  backgroundColor: "#1cc88a",
+			  data: [408,547,675,734]
+			},
+			{
+			  label: "BAD_PRODUCED",
+			  backgroundColor: "#E74A3B",
+			  data: [408,547,675,734]
+			}, **/
+		  ]
+		},
+		options: {
+		  title: {
+			display: true,
+			text: 'TIME / PRODUCTION CHART'
+		  }
+		}
+	});
+	
+	
+			});
+			
+	</script>  -->
+    
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first 
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
+	
+    <script>
+    //Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
+			authDomain: "progettotesi-39e44.firebaseapp.com",
+			databaseURL: "https://progettotesi-39e44.firebaseio.com",
+			projectId: "progettotesi-39e44",
+			storageBucket: "progettotesi-39e44.appspot.com",
+			messagingSenderId: "685387983144",
+			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
+			measurementId: "G-312CT07RMJ"
+		};
+  	
+		// Initialize Firebase
+  		firebase.initializeApp(firebaseConfig);
+	
+		//accedo al database  	
+        var db = firebase.firestore();
+		db.collection("machine").doc("machine1").onSnapshot(function(doc) {	
+	
+		new Chart(document.getElementById("bar-chart-grouped_1"), {
+		type: 'bar',
+		data: {
+		  labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00","11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",],
+		  datasets: [
+			{
+			  label: "STATE 1: MACHINE ON BUT DOES NOT PRODUCE",
+			  backgroundColor: "#0AF5A0",
+			  data: []
+			}, 
+			{
+			  label: "STATE 2: MACHINE ON AND PRODUCING",
+			  backgroundColor: "#1CC88A",
+			  data: [doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['2'],  doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'], doc.data().machine_state['2'],]
+			},
+{
+			  label: "STATE 3: MACHINE ON BUT WAITING FOR MOULD CHANGE",
+			  backgroundColor: "#27A779",
+			  data: [doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['2'], doc.data().machine_state['2'],]
+			},
+			{
+			  label: "STATE 4: WARNING MACHINE",
+			  backgroundColor: "#F6C23E",
+			  data: [doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['3'], doc.data().machine_state['3'],]
+			},
+			{
+			  label: "STATE 5: MACHINE WAITING FOR MATERIAL",
+			  backgroundColor: "#F6B50F",
+			  data: [doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['4'], doc.data().machine_state['4'],]
+			},
+			{
+			  label: "STATE 6: MALFUNCTIONING MACHINE",
+			  backgroundColor: "#E74A3B",
+			  data: []
+			},
+			{
+			  label: "STATE 7: MACHINE OFF",
+			  backgroundColor: "#858796",
+			  data: [doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['0'], doc.data().machine_state['6'],]
+			},
+		  ]
+		},
+		options: {
+		  title: {
+			display: true,
+			text: 'MACHINE STATE'
+		  }
+		}
+	});
+	
+	
+			});
+			
+	</script>  --> 
+    
+   
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
+	
+    <script>
+    //Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
+			authDomain: "progettotesi-39e44.firebaseapp.com",
+			databaseURL: "https://progettotesi-39e44.firebaseio.com",
+			projectId: "progettotesi-39e44",
+			storageBucket: "progettotesi-39e44.appspot.com",
+			messagingSenderId: "685387983144",
+			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
+			measurementId: "G-312CT07RMJ"
+		};
+  	
+		// Initialize Firebase
+  		firebase.initializeApp(firebaseConfig);
+	
+		//accedo al database  	
+        var db = firebase.firestore();
+		db.collection("machine").doc("machine1").onSnapshot(function(doc) {	
+	
+		for(var i in doc.data())
+   
+    	new Chart (document.getElementById("barChartProduction"), {
+	   	type: 'bar',
+	   	data: {
+		  labels: ['EXPECTED BEATINGS - PIECES ACTUALLY PRODUCED',], // responsible for how many bars are gonna show on the chart
+		  // create 12 datasets, since we have 12 items
+		  // data[0] = labels[0] (data for first bar - 'Standing costs') | data[1] = labels[1] (data for second bar - 'Running costs')
+		  // put 0, if there is no data for the particular bar
+		  datasets: [
+			  {
+				 label: 'PIECES ACTUALLY PRODUCED',
+				 data: [doc.data().pieces_actually_produced['7'],],
+				 backgroundColor: '#1CC88A',
+			  }, 
+			  {
+				 label: 'EXPECTED BEATINGS',
+				 data: [doc.data().expected_beatings['0'],],
+				 backgroundColor: '#858796',
+			  }, 
+		/**	  {
+				 label: 'Tolls',
+				 data: [0, 1],
+				 backgroundColor: '#316395'
+			  }, 
+			  {
+				 label: 'Parking',
+				 data: [5, 2],
+				 backgroundColor: '#b82e2e'
+			  }, 
+			  {
+				 label: 'Car tax',
+				 data: [0, 1],
+				 backgroundColor: '#66aa00'
+			  }, 
+			  {
+				 label: 'Repairs and improvements',
+				 data: [0, 2],
+				 backgroundColor: '#dd4477'
+			  }, 
+			  {
+				 label: 'Maintenance',
+				 data: [6, 1],
+				 backgroundColor: '#0099c6'
+			  }, 
+			  {
+				 label: 'Inspection',
+				 data: [0, 2],
+				 backgroundColor: '#990099'
+			  }, 
+			  {
+				 label: 'Loan interest',
+				 data: [0, 3],
+				 backgroundColor: '#109618'
+			  }, 
+			  {
+				 label: 'Depreciation of the vehicle',
+				 data: [0, 2],
+				 backgroundColor: '#109618'
+			  }, 
+			  {
+				 label: 'Fuel',
+				 data: [0, 1],
+				 backgroundColor: '#dc3912'
+			  }, 
+			  {
+				 label: 'Insurance and Breakdown cover',
+				 data: [4, 0],
+				 backgroundColor: '#3366cc'
+			  } **/
+		  ]
+	   },
+	   
+		options: {
+			title: {
+				display: true,
+				text: 'TIME / PRODUCTION CHART'
+				},
+			
+			responsive: true,
+			legend: {
+				position: 'right' // place legend on the right side of chart
+			},
+			
+			scales: {
+				xAxes: [{
+					stacked: true // this should be set to make the bars stacked
+				}],
+				yAxes: [{
+					stacked: true // this also..
+				}]
+			}
+		}
+	});
+});
+		
+	</script> 
+    
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
+	
+    <script>
+    //Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
+			authDomain: "progettotesi-39e44.firebaseapp.com",
+			databaseURL: "https://progettotesi-39e44.firebaseio.com",
+			projectId: "progettotesi-39e44",
+			storageBucket: "progettotesi-39e44.appspot.com",
+			messagingSenderId: "685387983144",
+			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
+			measurementId: "G-312CT07RMJ"
+		};
+  	
+		// Initialize Firebase
+  		firebase.initializeApp(firebaseConfig);
+	
+		//accedo al database  	
+        var db = firebase.firestore();
+		db.collection("machine").doc("machine1").onSnapshot(function(doc) {	
+	
+		for(var i in doc.data())
+   
+    	new Chart (document.getElementById("machinestate"), {
+	   	type: 'bar',
+		data: {
+		  labels: ['MACHINE STATE',], // responsible for how many bars are gonna show on the chart
+		  // create 12 datasets, since we have 12 items
+		  // data[0] = labels[0] (data for first bar - 'Standing costs') | data[1] = labels[1] (data for second bar - 'Running costs')
+		  // put 0, if there is no data for the particular bar
+		  datasets: [
+			  {
+				 label: "MACHINE ON BUT DOES NOT PRODUCE",
+			  	 data: [doc.data().machine_state['0'] + doc.data().machine_state['0'],],
+				 backgroundColor: "#1CC88A",
+			  },  
+			  
+			  {
+				 label: "MACHINE ON AND PRODUCING",
+				 data: [doc.data().machine_state['1'],],
+				 backgroundColor: "#1CC88A",
+			  },
+			  
+			  {
+				 label: "MACHINE ON BUT WAITING FOR MOULD CHANGE",
+				 data: [doc.data().machine_state['2'],],
+				 backgroundColor: "#1CC88A",
+			  }, 
+			  
+			  {
+				 label: "WARNING MACHINE",
+				 data: [ doc.data().machine_state['0'],],
+				 backgroundColor: "#F6C23E",
+			  }, 
+			  {
+				 label: "MACHINE WAITING FOR MATERIAL",
+				 data: [doc.data().machine_state['4'],],
+				 backgroundColor: "#F6C23E",
+			  },
+			 
+			 
+			  {
+				 label: "MALFUNCTIONING MACHINE",
+				 data: [],
+				 backgroundColor: "#E74A3B",
+			  }, 
+			  {
+				 label: "MACHINE OFF",
+				 data: [],
+				 backgroundColor: "#858796",
+			  },
+		  ]
+	   },
+	   
+	   options: {
+			title: {
+				display: true,
+				text: 'MACHINE STATE CHART'
+			},
+			
+			responsive: true,
+			legend: {
+				position: 'right' // place legend on the right side of chart
+			},
+			
+			scales: {
+				xAxes: [{
+					stacked: true // this should be set to make the bars stacked
+				}],
+				yAxes: [{
+					stacked: true // this also..
+				}]
+			}
+		}
+	});
+});
+
+	</script>    
+   
+
+
+</body>
+
+</html>
