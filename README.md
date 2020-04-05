@@ -1,11 +1,12 @@
 # Progetto di Tesi di Laurea Triennale in Informatica (L-31)
-## Biagio Boi
-## mat. 0512105125
-## Prof C.Gravino - Prof.ssa G.Vitiello
+__Biagio Boi<br>
+mat. 0512105125<br>
+Prof C.Gravino - Prof.ssa G.Vitiello__
 
-__ICT e Industria 4.0__ : _Progettazione e sviluppo di un sistema software per il monitoraggio in tempo reale di macchine industriali_
+## ICT e Industria 4.0
+_Progettazione e sviluppo di un sistema software per il monitoraggio in tempo reale di macchine industriali_
 
-In questo Progetto sarà gestita l'interfaccia grafica per la visualizzazione dei dati presenti nel database e opportunamente rielaborati per il calcolo degli indicatori OEE.
+In questo Progetto sarà gestita l'interfaccia grafica per la visualizzazione dei dati presenti nel database e opportunamente rielaborati per il calcolo degli indicatori OEE.<br>
 Tale progetto è il completamento del <a href="https://github.com/b14s199/proj_tesi_backend">Progetto di Backend</a>.
 
 __TODO__:
