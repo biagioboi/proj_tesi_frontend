@@ -10,8 +10,8 @@ Tale progetto è il completamento del <a href="https://github.com/b14s199/proj_t
 
 __TODO__:
 - [x] Rimodulazione delle pagine e dell'interfaccia (04/04/2020)
-- [] Creazione di una soluzione Object-Oriented per un corretto passaggio di parametri tra pagine
-- [] Gestione delle sessioni per il passaggio dei parametri
-- [] Integrazione con il backend attraverso chiamate AJAX
-- [] Integrazione con <a href="https://pusher.com/">Pusher</a> per l'aggiornamento in real-time dei dati
-- [] Revisione finale ed evenutali modifiche grafiche
+- [ ] Creazione di una soluzione Object-Oriented per un corretto passaggio di parametri tra pagine
+- [ ] Gestione delle sessioni per il passaggio dei parametri
+- [ ] Integrazione con il backend attraverso chiamate AJAX
+- [ ] Integrazione con <a href="https://pusher.com/">Pusher</a> per l'aggiornamento in real-time dei dati
+- [ ] Revisione finale ed evenutali modifiche grafiche
