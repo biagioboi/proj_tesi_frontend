@@ -1,21 +1,25 @@
+const ADDRESS = "localhost/proj_tesi_backend"; // server address
+const BACKGROUND_COLOR = {ok: 'btn-success', waiting: 'btn-warning', error: 'btn-danger', off: 'btn-secondary'}; // machine status background color
+
 $(document).ready(() => {
-    let machines = sessionStorage.getItem("storedMachines");
-    machines = loadMachineFromDatabase();
-    if (machines == "undefined") {
+    let machines = JSON.parse(sessionStorage.getItem("storedMachines"));
+    if (machines == null) {
         machines = loadMachineFromDatabase();
-        sessionStorage.setItem("storedMachines", machines);
+        sessionStorage.setItem("storedMachines", JSON.stringify(machines));
     }
     loadMachine(machines);
-
 });
 
 
-// Retrieve machines from database
-// path: Output/machines_config.txt
+/**
+ * Retrieve machines from database
+ * Path: Output/machines_config.txt
+ */
 function loadMachineFromDatabase() {
     let listMachines = [];
     $.ajax({
-        url: 'http://localhost:8080/Output/machines_config.txt',
+        async: false,
+        url: 'http://' + ADDRESS + '/Output/machines_config.txt',
         success: (response) => {
             response = JSON.parse(response);
             response.forEach((e) => {
@@ -30,6 +34,26 @@ function loadMachineFromDatabase() {
     return listMachines;
 }
 
-function loadMachine() {
-    return;
+/**
+ * Create the machines on the dashbord
+ * @param machines array of machines
+ */
+function loadMachine(machines) {
+    let content;
+    $.ajax({
+        async: false,
+        url: "content/cardMachine.html",
+        success: (response) => {
+            content = response;
+        }
+    });
+    machines.forEach((e) => {
+        $("#preCharge").html(content);
+        $("#preCharge .machine-name").html(e.name).attr('machineid', e.name);
+
+        //here we should do a control on machine status
+        $("#preCharge .principal-div-machine").addClass(BACKGROUND_COLOR.ok);
+        $("#machineList").append($("#preCharge").html());
+    });
 }
+
