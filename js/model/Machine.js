@@ -1,6 +1,6 @@
 class Machine {
 
-    constructor(name, status, powerOn, start, beatingSpeedPerHours, startMouldAssembly, endMouldAssembly, changeOfWorkShift, secondChangeOfWorkShift) {
+    constructor(name, status, powerOn, start, beatingSpeedPerHours, startMouldAssembly, endMouldAssembly, changeOfWorkShift, secondChangeOfWorkShift, oee) {
         this.name = name;
         this.status = status;
         this.powerOn = powerOn;
@@ -10,6 +10,7 @@ class Machine {
         this.endMouldAssembly = endMouldAssembly;
         this.changeOfWorkShift = changeOfWorkShift;
         this.secondChangeOfWorkShift = secondChangeOfWorkShift;
+        this.oee = oee;
         this.numExpectedProduct = null;
         this.numProduct = null;
         this.numGoodProduct = null;

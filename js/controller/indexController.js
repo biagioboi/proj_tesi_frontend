@@ -1,12 +1,9 @@
 const ADDRESS = "localhost/proj_tesi_backend"; // server address
-const BACKGROUND_COLOR = {ok: 'btn-success', waiting: 'btn-warning', error: 'btn-danger', off: 'btn-secondary'}; // machine status background color
+const BACKGROUND_COLOR = {run: 'btn-success', waiting: 'btn-warning', error: 'btn-danger', off: 'btn-secondary'}; // machine status background color
 
 $(document).ready(() => {
-    let machines = JSON.parse(sessionStorage.getItem("storedMachines"));
-    if (machines == null) {
-        machines = loadMachineFromDatabase();
-        sessionStorage.setItem("storedMachines", JSON.stringify(machines));
-    }
+    machines = loadMachineFromDatabase();
+    sessionStorage.setItem("storedMachines", JSON.stringify(machines));
     loadMachine(machines);
 });
 
@@ -23,7 +20,8 @@ function loadMachineFromDatabase() {
         success: (response) => {
             response = JSON.parse(response);
             response.forEach((e) => {
-                let x = new Machine(e.name, e.status, e.powerOn, e.start, e.beatingSpeedPerHours, e.startMouldAssembly, e.endMouldAssembly, e.changeOfWorkingShift, e.secondChangeOfWorkingShift, e.numExpectedProduct, e.numProduct, e.numGoodProduct, e.numBadProduct);
+                let oee = new OEE(e.oee.general, e.oee.availability, e.oee.performance, e.oee.quality);
+                let x = new Machine(e.name, e.status, e.powerOn, e.start, e.beatingSpeedPerHours, e.startMouldAssembly, e.endMouldAssembly, e.changeOfWorkingShift, e.secondChangeOfWorkingShift, oee);
                 listMachines.push(x);
             });
         },
@@ -49,10 +47,13 @@ function loadMachine(machines) {
     });
     machines.forEach((e) => {
         $("#preCharge").html(content);
-        $("#preCharge .machine-name").html(e.name).attr('machineid', e.name);
-
-        //here we should do a control on machine status
-        $("#preCharge .principal-div-machine").addClass(BACKGROUND_COLOR.ok);
+        $("#preCharge .div-resume-status-machine").attr('machineid', e.name);
+        $("#preCharge .machine-name").html(e.name);
+        $("#preCharge .machine-status").html(e.status);
+        $("#preCharge .oee-percentage").html(e.oee.general);
+        $("#preCharge .progress-bar-oee").attr("aria-valuenow", e.oee.general);
+        $("#preCharge .progress-bar-oee").css("width", e.oee.general + "%");
+        $("#preCharge .principal-div-machine").addClass(BACKGROUND_COLOR[e.status.toLowerCase()]);
         $("#machineList").append($("#preCharge").html());
     });
 }

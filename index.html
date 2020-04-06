@@ -15,12 +15,11 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 </head>
 
 <body id="page-top">
@@ -1187,140 +1186,11 @@
 <!-- Custom scripts for all pages-->
 <script src="js/sb-admin-2.min.js"></script>
 
-<!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-
-<script src="http://code.jquery.com/jquery-latest.js"></script>   <!-- riferimento slider -->
-<script src="js/bootstrap.min.js"></script>                        <!-- riferimento slider -->
-
 <!-- Biagio's script -->
+<script src="js/model/OEE.js"></script>
 <script src="js/model/Machine.js"></script>
 <script src="js/controller/indexController.js"></script>
 
-
-
-
-
-
-
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
-
-<script>
-
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
-        authDomain: "progettotesi-39e44.firebaseapp.com",
-        databaseURL: "https://progettotesi-39e44.firebaseio.com",
-        projectId: "progettotesi-39e44",
-        storageBucket: "progettotesi-39e44.appspot.com",
-        messagingSenderId: "685387983144",
-        appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
-        measurementId: "G-312CT07RMJ"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    //accedo al database
-    var db = firebase.firestore();
-
-    //accedo alla collezione machine1 leggo il documento a cui corrisponde e poi con onSnapshot posso tenere traccia delle eventuali modifiche, 		          aggiunte e cancellazioni fatte nel documento
-    var container = document.getElementById("container");
-    db.collection("machine1").doc("good_beatings").onSnapshot(function (doc) {
-
-        //per visualizzare i dati
-        console.log("Current data: ", doc.data());
-        for (var i in doc.data())
-            container.innerHTML += doc.data()[i] + "<br>";
-
-
-    });
-
-</script>
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
-
-<script>
-    //Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
-        authDomain: "progettotesi-39e44.firebaseapp.com",
-        databaseURL: "https://progettotesi-39e44.firebaseio.com",
-        projectId: "progettotesi-39e44",
-        storageBucket: "progettotesi-39e44.appspot.com",
-        messagingSenderId: "685387983144",
-        appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
-        measurementId: "G-312CT07RMJ"
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    //accedo al database
-    var db = firebase.firestore();
-
-    //accedo alla collezione machine1 leggo il documento a cui corrisponde e poi con onSnapshot posso tenere traccia delle eventuali modifiche, 		          aggiunte e cancellazioni fatte nel documento
-    var container = document.getElementById("lineChart");
-    db.collection("machine").doc("lineChart").onSnapshot(function (doc) {
-
-        //per visualizzare i dati
-        console.log("Current data: ", doc.data());
-        for (var i in doc.data())
-            container.innerHTML += doc.data()[i] + "<br>";
-        //console.log(doc.data().good_beatings['0']['1']+" "+ 100-doc.data().good_beatings['0']['1'])
-        var ctx = document.getElementById("lineChart");
-        var lineChart = new Chart(document.getElementById("lineChart"), {
-            type: 'line',
-            data: {
-                labels: ["00:00", "03:00", "04:00", "05:50", "06:00", "08:00", "12:00", "15:00", "18:00", "22:00"],
-                datasets: [{
-                    data: [doc.data().expected_beatings['0'], doc.data().expected_beatings['1'], doc.data().expected_beatings['2'], doc.data().expected_beatings['3'], doc.data().expected_beatings['4'], doc.data().expected_beatings['5'], doc.data().expected_beatings['6'], doc.data().expected_beatings['7'], doc.data().expected_beatings['8'], doc.data().expected_beatings['9'],],
-                    label: "EXPECTED_BEATINGS",
-                    borderColor: "#4E73DF",
-                    fill: false
-                }, {
-                    data: [doc.data().pieces_actually_produced['0'], doc.data().pieces_actually_produced['1'], doc.data().pieces_actually_produced['2'], doc.data().pieces_actually_produced['3'], doc.data().pieces_actually_produced['4'], doc.data().pieces_actually_produced['5'], doc.data().pieces_actually_produced['6'], doc.data().pieces_actually_produced['7'], doc.data().pieces_actually_produced['8'], doc.data().pieces_actually_produced['9'],],
-                    label: "PIECES_ACTUALLY_PRODUCED",
-                    borderColor: "#36B9CC",
-                    fill: false
-                }, {
-                    data: [doc.data().good_beatings['0'], doc.data().good_beatings['1'], doc.data().good_beatings['2'], doc.data().good_beatings['3'], doc.data().good_beatings['4'], doc.data().good_beatings['5'], doc.data().good_beatings['6'], doc.data().good_beatings['7'], doc.data().good_beatings['8'], doc.data().good_beatings['9'],],
-                    label: "GOOD_BEATINGS",
-                    borderColor: "#1CC88A",
-                    fill: false
-                }, {
-                    data: [doc.data().bad_beatings['0'], doc.data().bad_beatings['1'], doc.data().bad_beatings['2'], doc.data().bad_beatings['3'], doc.data().bad_beatings['4'], doc.data().bad_beatings['5'], doc.data().bad_beatings['6'], doc.data().bad_beatings['7'], doc.data().bad_beatings['8'], doc.data().losses['9'],],
-                    label: "BAD_BEATINGS",
-                    borderColor: "#E74A3B",
-                    fill: false
-                }, {
-                    data: [doc.data().losses['0'], doc.data().losses['1'], doc.data().losses['2'], doc.data().losses['3'], doc.data().losses['4'], doc.data().losses['5'], doc.data().losses['6'], doc.data().losses['7'], doc.data().losses['8'], doc.data().losses['9'],],
-                    label: "LOSSES",
-                    borderColor: "#F6C23E",
-                    fill: false
-                }
-                ]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Production Performance'
-                }
-            }
-        });
-
-    });
-
-</script>
 
 </body>
 
