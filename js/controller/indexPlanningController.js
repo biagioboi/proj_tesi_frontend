@@ -34,11 +34,25 @@ $(document).ready(() => {
     loadMachineFromDatabase(loadMachine);
 });
 
+function removeMachine(element) {
+    let mainDiv = $(element).parent().parent();
+    let machineId = mainDiv.attr("machineid");
+    let db = firebase.firestore();
+    let collection = db.collection(COLLECTION);
+    if (confirm("Do you really want to delete the machine '" + machineId + "'?"))
+        collection.doc(machineId).delete().then(() => {
+            alert("Machine successfully delete.");
+            mainDiv.remove();
+        }).catch((err) => {
+            alert("Error deleting machine.");
+        });
+}
 
 /**
  * Retrieve machines from database
  */
 function loadMachineFromDatabase(callback) {
+
     let listMachines = [];
     let db = firebase.firestore();
     let collection = db.collection(COLLECTION);
