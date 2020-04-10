@@ -85,6 +85,7 @@ function loadMachine(machines) {
         $("#preCharge .progress-bar-oee").css("width", e.oee.general + "%");
         $("#preCharge .principal-div-machine").addClass(BACKGROUND_COLOR[e.status.toLowerCase()]);
         $("#preCharge .img-status-machine").attr('src', IMG_STATUS[e.status.toLowerCase()]);
+        $("#preCharge .link-machine-details-planning").attr("href", "machine_details.html?machine=" + e.name);
         $("#machineList").append($("#preCharge").html());
         $("#preCharge").html(content);
         if (cont == numItem) {

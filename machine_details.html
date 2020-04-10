@@ -36,7 +36,12 @@
 
 <!-- Page Wrapper -->
 <div id="wrapper">
-
+    <div id="loading"
+         style="top: 0; position: fixed; width: 100%; height: 100vh; text-align: center; background-color: rgba(255, 255, 255, 0.5); z-index: 50;">
+        <div class="spinner-border" role="status" style="margin-top: 30vh;">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -76,7 +81,7 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h1 mb-0 font-weight-bold text-uppercase" style="color: red;">Machine 1 </h1>
+                    <h1 class="h1 mb-0 font-weight-bold text-uppercase" style="color: red;"><span class="machine-name"></span></h1>
                 </div>
 
                 <!-- Pie Chart -->
@@ -204,7 +209,7 @@
                             </div>
                         </div>
                         <button class="btn btn-outline-success w-100 mb-4">SAVE DATA IN DB</button>
-                        <button class="btn btn-outline-danger w-100 mb-4">DELETE MACHINE</button>
+                        <button class="btn btn-outline-danger w-100 mb-4 btn-delete-machine" onclick="removeMachine();">DELETE MACHINE</button>
                     </div>
                 </div>
             </div>
@@ -232,6 +237,15 @@
 
 <!-- Page level custom scripts -->
 <script src="js/demo/chart-area-demo.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+
+<!-- Biagio's script -->
+<script src="js/model/OEE.js"></script>
+<script src="js/model/Machine.js"></script>
+<script src="js/controller/machineDetailsController.js"></script>
 
 </body>
 
