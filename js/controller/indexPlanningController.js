@@ -59,9 +59,7 @@ function loadMachineFromDatabase(callback) {
     collection.get().then((querySnapshot) => {
         querySnapshot.forEach((e) => {
             e = e.data();
-            let oee = new OEE(e.oee.general, e.oee.availability, e.oee.performance, e.oee.quality);
-            let x = new Machine(e.name, e.status, e.powerOn, e.start, e.beatingSpeedPerHours, e.startMouldAssembly, e.endMouldAssembly, e.changeOfWorkingShift, e.secondChangeOfWorkingShift, oee);
-            listMachines.push(x);
+            listMachines.push(e);
         });
         callback(listMachines);
     });
@@ -80,9 +78,9 @@ function loadMachine(machines) {
         $("#preCharge .div-resume-status-machine").attr('machineid', e.name);
         $("#preCharge .machine-name").html(e.name);
         $("#preCharge .machine-status").html(e.status);
-        $("#preCharge .oee-percentage").html(e.oee.general);
-        $("#preCharge .progress-bar-oee").attr("aria-valuenow", e.oee.general);
-        $("#preCharge .progress-bar-oee").css("width", e.oee.general + "%");
+        $("#preCharge .oee-percentage").html(e.oee.latest.general);
+        $("#preCharge .progress-bar-oee").attr("aria-valuenow", e.oee.latest.general);
+        $("#preCharge .progress-bar-oee").css("width", e.oee.latest.general + "%");
         $("#preCharge .principal-div-machine").addClass(BACKGROUND_COLOR[e.status.toLowerCase()]);
         $("#preCharge .img-status-machine").attr('src', IMG_STATUS[e.status.toLowerCase()]);
         $("#preCharge .link-machine-details-planning").attr("href", "machine_details.html?machine=" + e.name);

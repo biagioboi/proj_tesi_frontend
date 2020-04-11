@@ -35,14 +35,14 @@
 <body id="page-top">
 
 <!-- Page Wrapper -->
-<div id="wrapper">
+<div id="wrapper" >
+    <!-- Sidebar -->
     <div id="loading"
-         style="top: 0; position: fixed; width: 100%; height: 100vh; text-align: center; background-color: rgba(255, 255, 255, 0.5); z-index: 50;">
+         style="top: 0; position: fixed; width: 100%; height: 100vh; text-align: center; background-color: white; background-color: rgba(255, 255, 255, 0.5); z-index: 50 !important;">
         <div class="spinner-border" role="status" style="margin-top: 30vh;">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
@@ -70,7 +70,7 @@
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column" >
 
         <!-- Main Content -->
         <div id="content">
@@ -81,14 +81,14 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h1 mb-0 font-weight-bold text-uppercase" style="color: red;"><span class="machine-name"></span></h1>
+                    <h1 class="h1 mb-0 font-weight-bold text-uppercase" style="color: red;"><span
+                            class="machine-name"></span></h1>
                 </div>
 
                 <!-- Pie Chart -->
                 <div class="row">
-
                     <!-- Pie Chart -->
-                    <div class="col-xl-6 col-lg-5" style="float:left">
+                    <div class="col-xl-12 col-lg-12" style="float:left">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-dark">
@@ -97,120 +97,47 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <label class="text-gray-900" style="font-weight:bold"> Power On: </label>
-                                <select class="form-control" id="power_on">
-                                    <option>-- Power On --</option>
-                                    <option>02:00</option>
-                                    <option>03:00</option>
-                                    <option>04:00</option>
-                                </select>
-                                <br>
-                                <label class="text-gray-900" style="font-weight:bold"> Start: </label>
-                                <select class="form-control" id="start">
-                                    <option>-- Start --</option>
-                                    <option>05:45</option>
-                                    <option>05:50</option>
-                                    <option>05:55</option>
-                                </select>
-                                <br>
-                                <label class="text-gray-900" style="font-weight:bold"> Beatings speed per
-                                    hours: </label>
-                                <select class="form-control" id="expected_beatings">
-                                    <option>-- Beatings speed per hours --</option>
-                                    <option>0</option>
-                                    <option>50</option>
-                                    <option>100</option>
-                                    <option>150</option>
-                                    <option>200</option>
-                                    <option>250</option>
-                                    <option>300</option>
-                                    <option>350</option>
-                                    <option>400</option>
-                                    <option>450</option>
-                                    <option>500</option>
-                                </select>
-                                <br>
-                                <label class="text-gray-900" style="font-weight:bold"> Start mould assembly: </label>
-                                <select class="form-control" id="start_mould_assembly">
-                                    <option>-- Start mould assembly --</option>
-                                    <option>06:00</option>
-                                    <option>06:15</option>
-                                    <option>06:30</option>
-                                </select>
-                                <br>
-                                <label class="text-gray-900" style="font-weight:bold"> End mould assembly: </label>
-                                <select class="form-control" id="end_mould_assembly">
-                                    <option>-- End mould assembly --</option>
-                                    <option>07:00</option>
-                                    <option>07:15</option>
-                                    <option>07:30</option>
-                                </select>
-                                <br>
-                                <label class="text-gray-900" style="font-weight:bold"> Change of work shift: </label>
-                                <select class="form-control" id="change_work_shift">
-                                    <option>-- change of work shift --</option>
-                                    <option>14:00</option>
-                                    <option>14:15</option>
-                                    <option>14:30</option>
-                                </select>
-                                <br>
-                                <label class="text-gray-900" style="font-weight:bold"> Second Change of work
-                                    shift: </label>
-                                <select class="form-control" id="second_change_work_shift">
-                                    <option>-- Second change of work shift --</option>
-                                    <option>22:00</option>
-                                    <option>22:15</option>
-                                    <option>22:30</option>
-                                </select>
-                                <br>
 
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pie Chart -->
-
-                    <div class="col-xl-6 col-lg-5" style="float:left">
-                        <div class="card shadow mb-4">
-                            <!-- Card Header - Dropdown -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-dark">
-                                <h6 class="h4 mb-0 mr-3 font-weight-bold text-white text-uppercase">Production
-                                    Simulation</h6>
-                            </div>
-                            <!-- Card Body -->
-                            <div class="card-body">
-                                <label class="text-gray-900" style="font-weight:bold"> Good Beatings: </label>
-                                <form name="modulo">
-                                    <textarea name="goodbeatings" id="randomdata" class="form-control form-control-lg"
-                                              rows="1" cols="50"></textarea>
-                                </form>
-                                <br>
-                            </div>
-                        </div>
-
-                        <!-- Collapsable Card Example -->
-                        <div class="card shadow mb-4">
-                            <!-- Card Header - Accordion -->
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-gradient-dark">
-                                <h6 class="h4 mb-0 mr-3 font-weight-bold text-white text-uppercase">Production
-                                    Simulation</h6>
-                            </div>
-                            <!-- Card Body -->
-                            <div class="card-body">
-                                <label class="text-gray-900" style="font-weight:bold"> Bad Beatings: </label>
-                                <form>
-                                    <div class="form-row">
-                                        <div class="col-2">
-                                            <input type="text" class="form-control form-control-lg" id="uno" style="width:640%;">
-                                        </div>
+                                <label class="text-gray-900" style="font-weight:bold" for="intervallo_max_stesso_pezzo">
+                                    intervallo_max_stesso_pezzo
+                                </label>
+                                <div class="input-group">
+                                    <input class="form-control" type="number" id="intervallo_max_stesso_pezzo"/>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">minuti</span>
                                     </div>
-                                </form>
-                                <br>
+                                </div>
+
+                                <label class="text-gray-900 mt-4" style="font-weight:bold"
+                                       for="intervallo_max_pezzi_diversi">
+                                    intervallo_max_pezzi_diversi
+                                </label>
+                                <div class="input-group">
+                                    <input class="form-control" type="number" id="intervallo_max_pezzi_diversi"/>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">minuti</span>
+                                    </div>
+                                </div>
+
+                                <label class="text-gray-900 mt-4" style="font-weight:bold" for="num_pezzi_previsti">
+                                    num_pezzi_previsti
+                                </label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">#</span>
+                                    </div>
+                                    <input class="form-control" type="number" id="num_pezzi_previsti"/>
+                                </div>
+
                             </div>
                         </div>
-                        <button class="btn btn-outline-success w-100 mb-4">SAVE DATA IN DB</button>
-                        <button class="btn btn-outline-danger w-100 mb-4 btn-delete-machine" onclick="removeMachine();">DELETE MACHINE</button>
+
+                        <button class="btn btn-outline-success w-100 mb-4" onclick="saveMachine();">SAVE DATA IN DB</button>
+                        <button class="btn btn-outline-danger w-100 mb-4 btn-delete-machine" onclick="removeMachine();">
+                            DELETE MACHINE
+                        </button>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -246,6 +173,7 @@
 <script src="js/model/OEE.js"></script>
 <script src="js/model/Machine.js"></script>
 <script src="js/controller/machineDetailsController.js"></script>
+
 
 </body>
 

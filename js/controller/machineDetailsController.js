@@ -1,6 +1,6 @@
 const COLLECTION = "macchinario";
 
-$(document).ready(()=> {
+$(document).ready(() => {
     let url = new URL(window.location.href);
     let machineId = url.searchParams.get("machine");
     var firebaseConfig = {
@@ -27,6 +27,9 @@ function checkIfMachineExist(machineId) {
             location.href = "index_planning.html";
         } else {
             $(".machine-name").html(doc.data().name);
+            $("#intervallo_max_stesso_pezzo").val(doc.data().intervallo_max_stesso_pezzo);
+            $("#intervallo_max_pezzi_diversi").val(doc.data().intervallo_max_pezzi_diversi);
+            $("#num_pezzi_previsti").val(doc.data().num_pezzi_previsti);
             $("#loading").css("display", "none");
         }
     });
@@ -43,4 +46,20 @@ function removeMachine() {
         }).catch((err) => {
             alert("Error deleting machine.");
         });
+}
+
+function saveMachine() {
+    let machineId = $(".machine-name").html();
+    let intervallo_max_stesso_pezzo = $("#intervallo_max_stesso_pezzo").val();
+    let intervallo_max_pezzi_diversi = $("#intervallo_max_pezzi_diversi").val();
+    let num_pezzi_previsti = $("#num_pezzi_previsti").val();
+    let ref_doc = firebase.firestore().collection(COLLECTION).doc(machineId);
+    ref_doc.set({
+        'intervallo_max_stesso_pezzo': intervallo_max_stesso_pezzo,
+        'intervallo_max_pezzi_diversi': intervallo_max_pezzi_diversi,
+        'num_pezzi_previsti': num_pezzi_previsti
+    }, {merge: true}).then(() => {
+        alert("Dati aggiornati con successo.");
+    });
+
 }
