@@ -98,35 +98,35 @@
                             <!-- Card Body -->
                             <div class="card-body">
 
-                                <label class="text-gray-900" style="font-weight:bold" for="intervallo_max_stesso_pezzo">
-                                    intervallo_max_stesso_pezzo
+                                <label class="text-gray-900" style="font-weight:bold" for="max_interval_same_piece">
+                                    max_interval_same_piece
                                 </label>
                                 <div class="input-group">
-                                    <input class="form-control" type="number" id="intervallo_max_stesso_pezzo"/>
+                                    <input class="form-control" type="number" id="max_interval_same_piece"/>
                                     <div class="input-group-append">
-                                        <span class="input-group-text">minuti</span>
+                                        <span class="input-group-text">secs</span>
                                     </div>
                                 </div>
 
                                 <label class="text-gray-900 mt-4" style="font-weight:bold"
-                                       for="intervallo_max_pezzi_diversi">
-                                    intervallo_max_pezzi_diversi
+                                       for="max_interval_different_pieces">
+                                    max_interval_different_pieces
                                 </label>
                                 <div class="input-group">
-                                    <input class="form-control" type="number" id="intervallo_max_pezzi_diversi"/>
+                                    <input class="form-control" type="number" id="max_interval_different_pieces"/>
                                     <div class="input-group-append">
-                                        <span class="input-group-text">minuti</span>
+                                        <span class="input-group-text">secs</span>
                                     </div>
                                 </div>
 
-                                <label class="text-gray-900 mt-4" style="font-weight:bold" for="num_pezzi_previsti">
-                                    num_pezzi_previsti
+                                <label class="text-gray-900 mt-4" style="font-weight:bold" for="expected_pieces">
+                                    expected_pieces
                                 </label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">#</span>
                                     </div>
-                                    <input class="form-control" type="number" id="num_pezzi_previsti"/>
+                                    <input class="form-control" type="number" id="expected_pieces"/>
                                 </div>
 
                             </div>
@@ -170,8 +170,6 @@
 <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
 <!-- Biagio's script -->
-<script src="js/model/OEE.js"></script>
-<script src="js/model/Machine.js"></script>
 <script src="js/controller/machineDetailsController.js"></script>
 
 

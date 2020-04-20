@@ -27,9 +27,9 @@ function checkIfMachineExist(machineId) {
             location.href = "index_planning.html";
         } else {
             $(".machine-name").html(doc.data().name);
-            $("#intervallo_max_stesso_pezzo").val(doc.data().intervallo_max_stesso_pezzo);
-            $("#intervallo_max_pezzi_diversi").val(doc.data().intervallo_max_pezzi_diversi);
-            $("#num_pezzi_previsti").val(doc.data().num_pezzi_previsti);
+            $("#max_interval_same_piece").val(doc.data().max_interval_same_piece);
+            $("#max_interval_different_pieces").val(doc.data().max_interval_different_pieces);
+            $("#expected_pieces").val(doc.data().expected_pieces);
             $("#loading").css("display", "none");
         }
     });
@@ -50,14 +50,14 @@ function removeMachine() {
 
 function saveMachine() {
     let machineId = $(".machine-name").html();
-    let intervallo_max_stesso_pezzo = $("#intervallo_max_stesso_pezzo").val();
-    let intervallo_max_pezzi_diversi = $("#intervallo_max_pezzi_diversi").val();
-    let num_pezzi_previsti = $("#num_pezzi_previsti").val();
+    let max_interval_same_piece = $("#max_interval_same_piece").val();
+    let max_interval_different_pieces = $("#max_interval_different_pieces").val();
+    let expected_pieces = $("#expected_pieces").val();
     let ref_doc = firebase.firestore().collection(COLLECTION).doc(machineId);
     ref_doc.set({
-        'intervallo_max_stesso_pezzo': intervallo_max_stesso_pezzo,
-        'intervallo_max_pezzi_diversi': intervallo_max_pezzi_diversi,
-        'num_pezzi_previsti': num_pezzi_previsti
+        'max_interval_same_piece': max_interval_same_piece,
+        'max_interval_different_pieces': max_interval_different_pieces,
+        'expected_pieces': expected_pieces
     }, {merge: true}).then(() => {
         alert("Dati aggiornati con successo.");
     });

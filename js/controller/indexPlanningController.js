@@ -2,7 +2,7 @@ const COLLECTION = "macchinario";
 // machine status background color
 const BACKGROUND_COLOR = {
     run: 'btn-success',
-    waiting: 'btn-warning',
+    warning: 'btn-warning',
     error: 'btn-danger',
     off: 'btn-secondary'
 };
