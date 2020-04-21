@@ -77,12 +77,17 @@ function loadMachine(machines) {
         cont++;
         $("#preCharge .div-resume-status-machine").attr('machineid', e.name);
         $("#preCharge .machine-name").html(e.name);
-        $("#preCharge .machine-status").html(e.status);
-        $("#preCharge .oee-percentage").html(e.oee.latest.general);
-        $("#preCharge .progress-bar-oee").attr("aria-valuenow", e.oee.latest.general);
-        $("#preCharge .progress-bar-oee").css("width", e.oee.latest.general + "%");
-        $("#preCharge .principal-div-machine").addClass(BACKGROUND_COLOR[e.status.toLowerCase()]);
-        $("#preCharge .img-status-machine").attr('src', IMG_STATUS[e.status.toLowerCase()]);
+        if (e.oee[e.last_available_oee] !== undefined) {
+            $("#preCharge .machine-status").html(e.oee[e.last_available_oee].status);
+            $("#preCharge .oee-percentage").html(e.oee[e.last_available_oee].general);
+            $("#preCharge .progress-bar-oee")
+                .attr("aria-valuenow", e.oee[e.last_available_oee].general)
+                .css("width", e.oee[e.last_available_oee].general + "%");
+            $("#preCharge .principal-div-machine").addClass(BACKGROUND_COLOR[e.oee[e.last_available_oee].status.toLowerCase()]);
+            $("#preCharge .img-status-machine").attr('src', IMG_STATUS[e.oee[e.last_available_oee].status.toLowerCase()]);
+        } else {
+            $("#preCharge .principal-div-machine").addClass(BACKGROUND_COLOR["off"]);
+        }
         $("#preCharge .link-machine-details-planning").attr("href", "machine_details.html?machine=" + e.name);
         $("#machineList").append($("#preCharge").html());
         $("#preCharge").html(content);

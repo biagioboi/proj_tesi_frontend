@@ -86,6 +86,7 @@ function setTimeTo(machines, params) {
         $("#preCharge .oee-percentage").html(e.oee[date].general);
         $("#preCharge .progress-bar-oee").attr("aria-valuenow", e.oee[date].general);
         $("#preCharge .progress-bar-oee").css("width", e.oee[date].general + "%");
+        $("#preCharge .link_details_oee").attr("href", "machine_oee_details.html?machine=" + e.name);
         $("#preCharge .principal-div-machine").addClass(BACKGROUND_COLOR[e.oee[date].status.toLowerCase()]);
         $("#preCharge .img-status-machine").attr('src', IMG_STATUS[e.oee[date].status.toLowerCase()]);
         $("#machineList").append($("#preCharge").html());

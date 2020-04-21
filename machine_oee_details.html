@@ -25,6 +25,12 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
+      <div id="loading"
+           style="z-index: 100; top: 0; position: fixed; width: 100%; height: 100vh; text-align: center; background-color: white; background-color: rgba(255, 255, 255, 0.5);">
+          <div class="spinner-border" role="status" style="margin-top: 30vh;">
+              <span class="sr-only">Loading...</span>
+          </div>
+      </div>
 
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -44,58 +50,6 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <!--<div class="sidebar-heading"> OEE </div>-->
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <!--<li class="nav-item">
-        <a class="nav-link collapsed" href="availability.html" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-stopwatch"></i> <!-- fa-clock 
-          <span>Availability</span>
-        </a>
-      </li>-->
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <!--<li class="nav-item">
-        <a class="nav-link collapsed" href="performance.html" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Performance</span>
-        </a>
-      </li>-->
-      
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <!--<li class="nav-item">
-        <a class="nav-link collapsed" href="quality.html" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-star"></i>
-          <span>Quality</span>
-        </a>
-      </li>-->
-
-      <!-- Divider -->
-      <!--<hr class="sidebar-divider">-->
-
-      <!-- Heading -->
-      <!--<div class="sidebar-heading"> PRODUCTION </div>-->
-
-	  <!-- Nav Item - Charts -->
-      <!--<li class="nav-item">
-        <a class="nav-link" href="TotalProductionReport.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Total productivity</span></a>
-      </li>-->
-
-      <!-- Nav Item - Tables 
-      <li class="nav-item">
-        <a class="nav-link" href="TotalProductionReport.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Total productivity</span></a>
-      </li>-->
-
-      <!-- Divider -->
-      <!--<hr class="sidebar-divider d-none d-md-block">-->
-
-      <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
@@ -108,40 +62,15 @@
 
       <!-- Main Content -->
       <div id="content">
-
-        <!-- Topbar -->
-        <!--<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">-->
-
-		  <!-- Topbar Navbar -->
-          <!--<ul class="navbar-nav ml-auto">-->
-
-           
-              
-              
-           <!-- </li>-->
-
-
-
-            
-
-            <!--<div class="topbar-divider d-none d-sm-block"></div>-->
-
-           
-
-          <!--</ul>-->
-
-        <!--</nav>-->
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
         <div class="container-fluid">
 		<br>
       
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    	<h1 class="h1 mb-0 font-weight-bold text-gray-900 text-uppercase"> OEE Machine 1 Details </h1>
+        <h1 class="h1 mb-0 font-weight-bold text-gray-900 text-uppercase"> OEE Details</h1>
     
     			<div class="my-2">
+                    <span style="margin-right: 2vw; font-size: 22px;" id="current_date"></span>
                   <a href="chart_time_production.html" target="_blank" class="btn btn-dark btn-icon-split btn-lg">
                     <span class="text text-uppercase font-weight-bold"	> Time / Production Charts </span>
                     <span class="icon text-white">
@@ -160,7 +89,7 @@
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-success">
                   <a href="index.html">
-                  <h6 class="h1 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase"> Machine 1
+                  <h6 class="h1 mb-0 mr-3 font-weight-bold text-gray-900 text-uppercase machine_name">
                   </h6>
                   </a>
 				</div>
@@ -171,11 +100,11 @@
                  <div class="col-3" style="float:left"> 
                      
                       <div class="chart-bar">
-                        <canvas id="myPieChart"></canvas>
+                        <canvas id="pieChartGeneral"></canvas>
                       </div>
                       <br>
                       <div class="h1 mr-3 font-weight-bold text-gray-900 text-uppercase" style="text-align:center">
-                        <span class="mr-2" id="oee">
+                        <span class="mr-2" id="general">
 
                         </span>
                       </div> 
@@ -183,7 +112,7 @@
                 
                 <div class="col-3" style="float:left">
                       <div class="chart-bar">
-                        <canvas id="myPieChart2"></canvas>
+                        <canvas id="pieChartAvailability"></canvas>
                       </div>
                       <br>
                       <div class="h1 mr-3 font-weight-bold text-gray-900 text-uppercase" style="text-align:center">
@@ -196,7 +125,7 @@
                 
                 <div class="col-3" style="float:left">
                       <div class="chart-bar">
-                        <canvas id="myPieChart3"></canvas>
+                        <canvas id="pieChartPerformance"></canvas>
                       </div>
                       <br>
                       <div class="h1 mr-3 font-weight-bold text-gray-900 text-uppercase" style="text-align:center">
@@ -208,7 +137,7 @@
                 
                 <div class="col-3" style="float:left">
                       <div class="chart-bar">
-                        <canvas id="myPieChart4"></canvas>
+                        <canvas id="pieChartQuality"></canvas>
                       </div>
                       <br>
                       <div class="h1 mr-3 font-weight-bold text-gray-900 text-uppercase" style="text-align:center">
@@ -266,6 +195,7 @@
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/moment.js"></script>
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -278,364 +208,17 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
-	<div id="myPieChart"></div>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
 
-	<script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
 
+        <script src="js/controller/OeeDetails.js"></script>
 
-		// Your web app's Firebase configuration
-		var firebaseConfig = {
-			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
-			authDomain: "progettotesi-39e44.firebaseapp.com",
-			databaseURL: "https://progettotesi-39e44.firebaseio.com",
-			projectId: "progettotesi-39e44",
-			storageBucket: "progettotesi-39e44.appspot.com",
-			messagingSenderId: "685387983144",
-			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
-			measurementId: "G-312CT07RMJ"
 
-		};
-
-		// Initialize Firebase
-  		firebase.initializeApp(firebaseConfig);
-
-		//accedo al database
-        var db = firebase.firestore();
-		db.collection("machine").doc("machine1").onSnapshot(function(doc) {
-
-	/**	var test = [];
-		var test1 = [];
-
-		var s1;
-		var s2;
-		var st;
-
-		for(var i in doc.data().uptime) {
-				test[i] =  doc.data().uptime[i];
-
-		}
-
-		for ( var i in test.length){
-			var s1=test[i]+s1;}
-
-	alert(s1);
-
-
-
-
-
-
-
-		for (var i in doc.data().uptime){
-				var prova = (doc.data().uptime[i] / 100);
-			for ( var k in doc.data().losses){
-
-
-			}
-		}
-
-
-
-
-		var availability = (doc.data().uptime) / (doc.data().uptime + doc.data().losses);
-		var performance = (doc.data().pieces_actually_produced) / (doc.data().expected_beatings);
-		var quality = (doc.data().good_beatings) / (doc.data().pieces_actually_produced); **/
-
-
-
-		var a = (doc.data().availability) / 100;
-		var p = (doc.data().performance) / 100;
-		var q = (doc.data().quality) / 100;
-
-		var moltiplica = (a * p * q) * 100;
-
-		var salva = db.collection('machine').doc('machine1');
-
-		var setWithMerge = salva.set({
-    		oee: moltiplica
-		},
-		{ merge: true });
-
-		var ctx = document.getElementById("myPieChart");
-		var myPieChart  = new Chart(ctx, {
- 		type: 'doughnut',
-  			data: {
-    			labels: ["OEE","Percentual OEE Remaining", "", ""],
-    		datasets: [{
-      			data: [moltiplica, 100-moltiplica],
-     				backgroundColor: ['#36b9cc','#cccccc', '', ''],
-      				<!--hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
-      				hoverBorderColor: "rgba(234, 236, 244, 1)",
-    			}],
-  			},
-  		options: {
-    		maintainAspectRatio: false,
-				tooltips: {
-				  backgroundColor: "rgb(255,255,255)",
-				  bodyFontColor: "#858796",
-				  borderColor: '#dddfeb',
-				  borderWidth: 1,
-				  xPadding: 15,
-				  yPadding: 15,
-				  displayColors: false,
-				  caretPadding: 10,
-				},
-			legend: {
-			  display: false
-			},
-			cutoutPercentage: 80,
-		  },
-
-	});
-
-		document.getElementById("oee").innerHTML = "OEE " +moltiplica + "%";
-		document.getElementById("oee").innerHTML = "OEE" + " " +prova + "" + "%";
-
-		});
-
-    </script>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
-
-	<script>
-
-		// Your web app's Firebase configuration
-		var firebaseConfig = {
-			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
-			authDomain: "progettotesi-39e44.firebaseapp.com",
-			databaseURL: "https://progettotesi-39e44.firebaseio.com",
-			projectId: "progettotesi-39e44",
-			storageBucket: "progettotesi-39e44.appspot.com",
-			messagingSenderId: "685387983144",
-			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
-			measurementId: "G-312CT07RMJ"
-		};
-
-		// Initialize Firebase
-  		firebase.initializeApp(firebaseConfig);
-
-		//accedo al database
-        var db = firebase.firestore();
-
-		//accedo alla collezione machine1 leggo il documento a cui corrisponde e poi con onSnapshot posso tenere traccia delle eventuali modifiche, 		          aggiunte e cancellazioni fatte nel documento
-		var container = document.getElementById("myPieChart");
-		db.collection("machine").doc("machine1").onSnapshot(function(doc) {
-		var prova = doc.data().availability;
-		document.getElementById("availability").innerText = " " +prova + "" + "%" + " AVAILABILITY";
-
-
-		//per visualizzare i dati
-		console.log("Current data: ", doc.data());
-		for(var i in doc.data())
-			container.innerHTML += doc.data()[i] + "<br>";
-			console.log(doc.data().availability+" "+ 100-doc.data().availability)
-			var ctx = document.getElementById("myPieChart2");
-			var myPieChart  = new Chart(ctx, {
-			  type: 'doughnut',
-			  data: {
-				labels: ["Availability","Percentual Remaining Availability", "", ""],
-				datasets: [{
-					data: [doc.data().availability, 100-doc.data().availability,],
-				  backgroundColor: ['#1cc88a','#cccccc', '', ''],
-				  <!--hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],-->
-				  hoverBorderColor: "rgba(234, 236, 244, 1)",
-				}],
-			  },
-			  options: {
-				maintainAspectRatio: false,
-				tooltips: {
-				  backgroundColor: "rgb(255,255,255)",
-				  bodyFontColor: "#858796",
-				  borderColor: '#dddfeb',
-				  borderWidth: 1,
-				  xPadding: 15,
-				  yPadding: 15,
-				  displayColors: false,
-				  caretPadding: 10,
-				},
-				legend: {
-				  display: false
-				},
-				cutoutPercentage: 80,
-			  },
-			});
-
-
-		});
-
-    </script>
-
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
-
-	<script>
-
-		// Your web app's Firebase configuration
-		var firebaseConfig = {
-			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
-			authDomain: "progettotesi-39e44.firebaseapp.com",
-			databaseURL: "https://progettotesi-39e44.firebaseio.com",
-			projectId: "progettotesi-39e44",
-			storageBucket: "progettotesi-39e44.appspot.com",
-			messagingSenderId: "685387983144",
-			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
-			measurementId: "G-312CT07RMJ"
-		};
-
-		// Initialize Firebase
-  		firebase.initializeApp(firebaseConfig);
-
-		//accedo al database
-        var db = firebase.firestore();
-
-		//accedo alla collezione machine1 leggo il documento a cui corrisponde e poi con onSnapshot posso tenere traccia delle eventuali modifiche, 		          aggiunte e cancellazioni fatte nel documento
-		var container = document.getElementById("myPieChart");
-		db.collection("machine").doc("machine1").onSnapshot(function(doc) {
-		var prova = doc.data().performance;
-		document.getElementById("performance").innerText = " " +prova + "" + "%" + " PERFORMANCE";
-
-
-		//per visualizzare i dati
-		console.log("Current data: ", doc.data());
-		for(var i in doc.data())
-			container.innerHTML += doc.data()[i] + "<br>";
-			console.log(doc.data().performance+" "+ 100-doc.data().performance)
-			var ctx = document.getElementById("myPieChart3");
-			var myPieChart  = new Chart(ctx, {
-			  type: 'doughnut',
-			  data: {
-				labels: ["Performance","Percentual Performance Remaining", "", ""],
-				datasets: [{
-					data: [doc.data().performance, 100-doc.data().performance,],
-				  backgroundColor: ['#f6c23e','#cccccc', '', ''],
-				  <!--hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],-->
-				  hoverBorderColor: "rgba(234, 236, 244, 1)",
-				}],
-			  },
-			  options: {
-				maintainAspectRatio: false,
-				tooltips: {
-				  backgroundColor: "rgb(255,255,255)",
-				  bodyFontColor: "#858796",
-				  borderColor: '#dddfeb',
-				  borderWidth: 1,
-				  xPadding: 15,
-				  yPadding: 15,
-				  displayColors: false,
-				  caretPadding: 10,
-				},
-				legend: {
-				  display: false
-				},
-				cutoutPercentage: 80,
-			  },
-			});
-
-
-		});
-
-    </script>
-
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
-
-	<script>
-
-		// Your web app's Firebase configuration
-		var firebaseConfig = {
-			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
-			authDomain: "progettotesi-39e44.firebaseapp.com",
-			databaseURL: "https://progettotesi-39e44.firebaseio.com",
-			projectId: "progettotesi-39e44",
-			storageBucket: "progettotesi-39e44.appspot.com",
-			messagingSenderId: "685387983144",
-			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
-			measurementId: "G-312CT07RMJ"
-		};
-
-		// Initialize Firebase
-  		firebase.initializeApp(firebaseConfig);
-
-		//accedo al database
-        var db = firebase.firestore();
-
-		//accedo alla collezione machine1 leggo il documento a cui corrisponde e poi con onSnapshot posso tenere traccia delle eventuali modifiche, 		          aggiunte e cancellazioni fatte nel documento
-		var container = document.getElementById("myPieChart");
-		db.collection("machine").doc("machine1").onSnapshot(function(doc) {
-		var prova = doc.data().quality;
-		document.getElementById("quality").innerText = " " +prova + "" + "%" + " QUALITY";
-
-
-		//per visualizzare i dati
-		console.log("Current data: ", doc.data());
-		for(var i in doc.data())
-			container.innerHTML += doc.data()[i] + "<br>";
-			console.log(doc.data().quality+" "+ 100-doc.data().quality)
-			var ctx = document.getElementById("myPieChart4");
-			var myPieChart  = new Chart(ctx, {
-			  type: 'doughnut',
-			  data: {
-				labels: ["Quality","Percentual Remaining Quality", "", ""],
-				datasets: [{
-					data: [doc.data().quality, 100-doc.data().quality,],
-				  backgroundColor: ['#e74a3b','#cccccc', '', ''],
-				  <!--hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],-->
-				  hoverBorderColor: "rgba(234, 236, 244, 1)",
-				}],
-			  },
-			  options: {
-				maintainAspectRatio: false,
-				tooltips: {
-				  backgroundColor: "rgb(255,255,255)",
-				  bodyFontColor: "#858796",
-				  borderColor: '#dddfeb',
-				  borderWidth: 1,
-				  xPadding: 15,
-				  yPadding: 15,
-				  displayColors: false,
-				  caretPadding: 10,
-				},
-				legend: {
-				  display: false
-				},
-				cutoutPercentage: 80,
-			  },
-			});
-
-
-		});
-
-    </script>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
 
     <script>
-    //Your web app's Firebase configuration
-		var firebaseConfig = {
-			apiKey: "AIzaSyD4CmgkLl6CYcbO2-kfo8bNvzWbzrZ46fE",
-			authDomain: "progettotesi-39e44.firebaseapp.com",
-			databaseURL: "https://progettotesi-39e44.firebaseio.com",
-			projectId: "progettotesi-39e44",
-			storageBucket: "progettotesi-39e44.appspot.com",
-			messagingSenderId: "685387983144",
-			appId: "1:685387983144:web:1f91364bf65b6b0aa8481d",
-			measurementId: "G-312CT07RMJ"
-		};
-
-		// Initialize Firebase
-  		firebase.initializeApp(firebaseConfig);
 
 		//accedo al database
         var db = firebase.firestore();
