@@ -68,13 +68,13 @@ function loadData(machine) {
 
     oee_details.forEach((e) => {
         let percentage = oee_obj[e];
-        $("#" + e).html(e + " " + percentage + "%");
+        $("#" + e).html(e + "<br>" + percentage + "%");
         new Chart(context[e].nameContainer, {
             type: 'doughnut',
             data: {
-                labels: [e, "Percentual Remaining " + e],
+                labels: [e, "no"],
                 datasets: [{
-                    data: [percentage, 100 - percentage],
+                    data: [percentage, (100 - percentage).toFixed(2)],
                     backgroundColor: [context[e].background, '#cccccc'],
                     hoverBorderColor: "rgba(234, 236, 244, 1)",
                 }],
@@ -98,7 +98,6 @@ function loadData(machine) {
             },
         });
     });
-    $("#loading").css("display", "none");
 
     let datas = {good_pieces: [], bad_pieces: []}
     let dataForLineChart = {labels: [], datasets: []}
@@ -117,23 +116,33 @@ function loadData(machine) {
         let j = moment(b);
         if (k.isAfter(j)) return 1; else return -1;
     });
+    toSort.push(last_available_oee);
 
-   toSort.forEach((e) => {
-       dataForLineChart.labels.push(e.substr(11, 5));
-       datas.good_pieces.push(machine.oee[e].good_pieces);
-       datas.bad_pieces.push(machine.oee[e].bad_pieces);
-   });
+    toSort.forEach((e) => {
+        dataForLineChart.labels.push(e.substr(11, 5));
+        datas.good_pieces.push(machine.oee[e].good_pieces);
+        datas.bad_pieces.push(machine.oee[e].bad_pieces);
+    });
 
 
-    let label = ["good_pieces", "bad_pieces"];
+    let label = [{
+        index: "good_pieces",
+        name: "Good Pieces",
+        color: "#F45655"
+    }, {
+        index: "bad_pieces",
+        name: "Bad Pieces",
+        color: "#459cfa"
+    }];
+
     label.forEach(((e) => {
-       let obj_to_add = {
-           data: datas[e],
-           label: e,
-           borderColor: "#3D251A",
-           fill:false
-       };
-       dataForLineChart.datasets.push(obj_to_add);
+        let obj_to_add = {
+            data: datas[e.index],
+            label: e.name,
+            borderColor: e.color,
+            fill: false
+        };
+        dataForLineChart.datasets.push(obj_to_add);
     }));
 
     new Chart(document.getElementById("lineChart"), {
@@ -148,10 +157,5 @@ function loadData(machine) {
         }
     });
 
+    $("#loading").css("display", "none");
 }
-
-/*
-
-/*
-});
-*/
