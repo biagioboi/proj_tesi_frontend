@@ -104,16 +104,25 @@ function loadData(machine) {
     let dataForLineChart = {labels: [], datasets: []}
     let last_date = moment(last_available_oee);
 
+    let toSort = []
     for (let key in machine.oee) {
         if (key.startsWith(last_available_oee.substr(0, 11))) { // it means that the considered date it's the same of the last_available_oee date
             if (moment(key).isBefore(last_date)) {
-                dataForLineChart.labels.push(key.substr(11, 5));
-                datas.good_pieces.push(machine.oee[key].good_pieces);
-                datas.bad_pieces.push(machine.oee[key].bad_pieces);
-                console.log(key);
+                toSort[toSort.length] = key
             }
         }
     }
+    toSort.sort((a, b) => {
+        let k = moment(a);
+        let j = moment(b);
+        if (k.isAfter(j)) return 1; else return -1;
+    });
+
+   toSort.forEach((e) => {
+       dataForLineChart.labels.push(e.substr(11, 5));
+       datas.good_pieces.push(machine.oee[e].good_pieces);
+       datas.bad_pieces.push(machine.oee[e].bad_pieces);
+   });
 
 
     let label = ["good_pieces", "bad_pieces"];
