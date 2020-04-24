@@ -4,6 +4,7 @@ $(document).ready(() => {
 
     let url = new URL(window.location.href);
     let machineId = url.searchParams.get("machine");
+    let date = url.searchParams.get("date");
 
     // firebase configuration
     var firebaseConfig = {
@@ -19,28 +20,30 @@ $(document).ready(() => {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-    checkIfMachineExist(machineId, loadData);
+    checkIfMachineExist(machineId, loadData, date);
 
 });
 
 
-function checkIfMachineExist(machineId, callback) {
+function checkIfMachineExist(machineId, callback, param) {
     let db = firebase.firestore();
     let collection = db.collection(COLLECTION);
     collection.doc(machineId).get().then((doc) => {
         if (!doc.exists) {
             location.href = "index_planning.html";
         } else {
-            callback(doc.data());
+            callback(doc.data(), param);
         }
     });
 }
 
-function loadData(machine) {
-    let last_available_oee = machine.last_available_oee;
+function loadData(machine, date) {
+    let last_available_oee = date;
     if (machine.oee[last_available_oee] === undefined)
         location.href = "index_planning.html";
     let oee_obj = machine.oee[last_available_oee];
+
+    $(".link-chart-time").attr("href", "chart_time_production.html?machine=" + machine.name + "&date=" + date);
 
     $(".machine_name").html(machine.name);
     $("#current_date").html(moment(last_available_oee).format("dddd, MMMM Do YYYY HH:mm"));

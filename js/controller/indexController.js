@@ -72,7 +72,7 @@ function setTimeTo(machines, params) {
     if (machines[0].oee[next] !== undefined) $("#next_hour").attr("new_time", next)
     else $("#next_hour").removeAttr("new_time")
 
-    $(".last-production-time").html(time);
+    $(".last-production-time").html(time).attr("time_value", date);
     $("#current_date").html(dailyDate);
     $("#machineList").html("");
     let content = $("#preCharge").html();
@@ -84,9 +84,7 @@ function setTimeTo(machines, params) {
         $("#preCharge .machine-name").html(e.name);
         $("#preCharge .machine-status").html(e.oee[date].status);
         $("#preCharge .oee-percentage").html(e.oee[date].general);
-        $("#preCharge .progress-bar-oee").attr("aria-valuenow", e.oee[date].general);
-        $("#preCharge .progress-bar-oee").css("width", e.oee[date].general + "%");
-        $("#preCharge .link_details_oee").attr("href", "machine_oee_details.html?machine=" + e.name);
+        $("#preCharge .progress-bar-oee").attr("aria-valuenow", e.oee[date].general).css("width", e.oee[date].general + "%");
         $("#preCharge .principal-div-machine").addClass(BACKGROUND_COLOR[e.oee[date].status.toLowerCase()]);
         $("#preCharge .img-status-machine").attr('src', IMG_STATUS[e.oee[date].status.toLowerCase()]);
         $("#machineList").append($("#preCharge").html());
@@ -105,4 +103,8 @@ function goToDate(el) {
     let date = $(el).attr("new_time");
     console.log(date);
     loadMachineFromDatabase(setTimeTo, [date]);
+}
+
+function machineDetails(el) {
+    window.open("machine_oee_details.html?machine=" + $(el).attr("machineid") + "&date="+ $(".last-production-time").attr("time_value"));
 }
