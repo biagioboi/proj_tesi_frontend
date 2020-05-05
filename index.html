@@ -104,16 +104,37 @@
                     <h1 class="h1 mb-0 font-weight-bold text-gray-900 text-uppercase"> OEE Total Production Report </h1>
 
                     <div class="my-2">
-                        <span style="margin-right: 2vw; font-size: 22px;" id="current_date"></span>
+                        <div style="height: 100%;">
+                            <div class="btn btn-dark btn-icon-split btn-lg font-weight-bold shadow-sm"
+                                 style="border-radius:3px; height: 51px;">
+                            <span class="icon text-white" id="prev_day" onclick="goToDate(this);">
+                                <img src="img/sliderleft.png" width="20" height="22"/>
+                            </span>
+                                <span class="text" style="font-size: 22px;" id="current_date"></span>
+                                <span class="icon text-white" id="next_day" onclick="goToDate(this);">
+                                <img src="img/sliderright.png" width="20" height="22"/>
+                            </span>
+                            </div>
+
+                            <div class="btn btn-dark btn-icon-split btn-lg font-weight-bold shadow-sm"
+                                 style="border-radius:3px; height: 100%;">
+                                <select class="custom-select "
+                                        style="background-color: transparent; color: white; border-color: transparent; height: 49px;">
+                                    <option>miao</option>
+                                </select>
+                            </div>
+                        </div>
+
+
                         <div class="btn btn-dark btn-icon-split btn-lg font-weight-bold shadow-sm"
                              style="border-radius:3px;">
-                    <span class="icon text-white" id="prev_hour" onclick="goToDate(this);">
-                      <img src="img/sliderleft.png" width="20" height="22"/>
-                    </span>
+                            <span class="icon text-white" id="prev_hour" onclick="goToDate(this);">
+                                <img src="img/sliderleft.png" width="20" height="22"/>
+                            </span>
                             <span class="text last-production-time"></span>
                             <span class="icon text-white" id="next_hour" onclick="goToDate(this);">
-                      <img src="img/sliderright.png" width="20" height="22"/>
-                    </span>
+                                <img src="img/sliderright.png" width="20" height="22"/>
+                            </span>
                         </div>
                     </div>
                 </div>
