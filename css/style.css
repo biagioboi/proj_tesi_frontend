@@ -1,3 +1,11 @@
 .shadow {
     width: 90% !important;
 }
+.list-time option {
+    color: #ffffff;
+    background-color: #5a5c69;
+    font-size: 24px !important;
+
+}
+.last-time option{
+}
