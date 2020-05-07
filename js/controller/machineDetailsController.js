@@ -30,6 +30,7 @@ function checkIfMachineExist(machineId) {
             $("#max_interval_same_piece").val(doc.data().max_interval_same_piece);
             $("#max_interval_different_pieces").val(doc.data().max_interval_different_pieces);
             $("#expected_pieces").val(doc.data().expected_pieces);
+            $("#cycle_time").val(doc.data().cycle_time);
             $("#loading").css("display", "none");
         }
     });
@@ -50,14 +51,16 @@ function removeMachine() {
 
 function saveMachine() {
     let machineId = $(".machine-name").html();
-    let max_interval_same_piece = $("#max_interval_same_piece").val();
-    let max_interval_different_pieces = $("#max_interval_different_pieces").val();
-    let expected_pieces = $("#expected_pieces").val();
+    let max_interval_same_piece = parseInt($("#max_interval_same_piece").val());
+    let max_interval_different_pieces = parseInt($("#max_interval_different_pieces").val());
+    let expected_pieces = parseInt($("#expected_pieces").val());
+    let cycle_time = parseInt($("#cycle_time").val());
     let ref_doc = firebase.firestore().collection(COLLECTION).doc(machineId);
     ref_doc.set({
         'max_interval_same_piece': max_interval_same_piece,
         'max_interval_different_pieces': max_interval_different_pieces,
-        'expected_pieces': expected_pieces
+        'expected_pieces': expected_pieces,
+        'cycle_time': cycle_time
     }, {merge: true}).then(() => {
         alert("Dati aggiornati con successo.");
     });
