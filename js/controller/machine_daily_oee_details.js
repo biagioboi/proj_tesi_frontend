@@ -81,7 +81,7 @@ function loadData(machine) {
     obj_oee.performance = (obj_oee.performance / totEl).toFixed(2);
     obj_oee.quality = (obj_oee.quality / totEl).toFixed(2);
 
-    $(".link-chart-time").attr("href", "daily_chart_time_production.html?machine=" + machine.name + "&date=" + last_available_oee);
+    $(".link-chart-time").attr("href", "daily_chart_time_production.html?machine=" + machine.name);
 
     $(".machine_name").html(machine.name);
     $("#current_date").html(moment(last_available_oee).format("dddd, MMMM Do YYYY HH:mm"));

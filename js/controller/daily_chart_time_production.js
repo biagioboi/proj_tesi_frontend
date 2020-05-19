@@ -4,7 +4,6 @@ $(document).ready(() => {
 
     let url = new URL(window.location.href);
     let machineId = url.searchParams.get("machine");
-    let date = url.searchParams.get("date");
 
     // firebase configuration
     var firebaseConfig = {
@@ -20,23 +19,24 @@ $(document).ready(() => {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-    checkIfMachineExist(machineId, loadData, date);
+    checkIfMachineExist(machineId, loadData);
 
 });
 
-function checkIfMachineExist(machineId, callback, param) {
+function checkIfMachineExist(machineId, callback) {
     let db = firebase.firestore();
     let collection = db.collection(COLLECTION);
     collection.doc(machineId).get().then((doc) => {
         if (!doc.exists) {
             location.href = "index_planning.html";
         } else {
-            callback(doc.data(), param);
+            callback(doc.data());
         }
     });
 }
 
-function loadData(machine, date) {
+function loadData(machine) {
+    let date = machine.last_available_oee;
     if (machine.oee[date] === undefined)
         location.href = "index_planning.html";
 
