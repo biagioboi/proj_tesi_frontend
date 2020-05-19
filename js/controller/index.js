@@ -76,10 +76,10 @@ function setTimeTo(machines, params) {
     if (machines[0].oee[next_day] !== undefined) $("#next_day").attr("new_time", next_day)
     else $("#next_day").removeAttr("new_time")
 
-    let toSort = []
+    let toSort = [];
     for (let key in machines[0].oee) {
         if (key.startsWith(date.substr(0, 11))) { // it means that the considered date it's the same of the last_available_oee date
-            toSort[toSort.length] = key
+            toSort[toSort.length] = key;
         }
     }
     toSort.sort((a, b) => {

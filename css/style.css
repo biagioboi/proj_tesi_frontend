@@ -1,6 +1,15 @@
 .shadow {
     width: 90% !important;
 }
+#select-current-hour {
+    background-color: #2d2e33;
+    color: white;
+}
+
+#select-current-hour option{
+    background-color: #2d2e33;
+    color: white;
+}
 .list-time option {
     color: #ffffff;
     background-color: #5a5c69;
