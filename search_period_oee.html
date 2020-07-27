@@ -117,18 +117,18 @@
                         <label>From Period</label><br>
                         <div class="btn btn-dark btn-icon-split btn-lg font-weight-bold shadow-sm mr-4"
                              style="border-radius:3px; height: 51px;">
-                            <span class="icon text-white" id="prev_day" onclick="goToDate(this);">
+                            <span class="icon text-white" id="prev_day_from" onclick="goToDate(this);">
                                 <img src="img/sliderleft.png" width="20" height="22"/>
                             </span>
-                            <span class="text" style="font-size: 22px;" id="current_date"></span>
-                            <span class="icon text-white" id="next_day" onclick="goToDate(this);">
+                            <span class="text" style="font-size: 22px;" id="date_from"></span>
+                            <span class="icon text-white" id="next_day_from" onclick="goToDate(this);">
                                 <img src="img/sliderright.png" width="20" height="22"/>
                             </span>
                         </div>
 
                         <div class="btn btn-dark btn-icon-split btn-lg font-weight-bold shadow-sm"
                              style="border-radius:3px; height: 100%;">
-                            <select class="custom-select list-time"
+                            <select class="custom-select list-time list-time-from"
                                     style="background-color: transparent; color: white; border-color: transparent; height: 49px; font-size: 24px;">
                             </select>
                         </div>
@@ -138,18 +138,18 @@
                         <label>To Period</label><br>
                         <div class="btn btn-dark btn-icon-split btn-lg font-weight-bold shadow-sm mr-4"
                              style="border-radius:3px; height: 51px;">
-                            <span class="icon text-white" id="prev_day" onclick="goToDate(this);">
+                            <span class="icon text-white" id="prev_day_to" onclick="goToDate(this);">
                                 <img src="img/sliderleft.png" width="20" height="22"/>
                             </span>
-                            <span class="text" style="font-size: 22px;" id="current_date"></span>
-                            <span class="icon text-white" id="next_day" onclick="goToDate(this);">
+                            <span class="text" style="font-size: 22px;" id="date_to"></span>
+                            <span class="icon text-white" id="next_day_to" onclick="goToDate(this);">
                                 <img src="img/sliderright.png" width="20" height="22"/>
                             </span>
                         </div>
 
                         <div class="btn btn-dark btn-icon-split btn-lg font-weight-bold shadow-sm"
                              style="border-radius:3px; height: 100%;">
-                            <select class="custom-select list-time"
+                            <select class="custom-select list-time list-time-to"
                                     style="background-color: transparent; color: white; border-color: transparent; height: 49px; font-size: 24px;">
                             </select>
                         </div>
