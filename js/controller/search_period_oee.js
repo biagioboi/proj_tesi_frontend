@@ -59,8 +59,8 @@ function loadMachine(machines, date) {
     if (date == null) {
         // it means that it's the init and we need to decide till which hour set the time list,
         // so we assume from midnight of the last day, to the last time received
-        var toDate = moment(machines[0].last_available_oee, 'YYYY-MM-DD HH:mm:ss');
-        var fromDate = (moment(machines[0].last_available_oee, 'YYYY-MM-DD HH:mm:ss')).minute(0).hour(0).second(0);
+        var toDate = moment(machines[0].last_available_oee, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM-DD HH:mm:ss');
+        var fromDate = (moment(machines[0].last_available_oee, 'YYYY-MM-DD HH:mm:ss')).minute(0).hour(0).second(0).format('YYYY-MM-DD HH:mm:ss');
         date = [fromDate, toDate];
     }
     setTimeTo(machines, date);
@@ -69,11 +69,21 @@ function loadMachine(machines, date) {
 function setTimeTo(machines, params) {
     var toDate = moment(params[1], 'YYYY-MM-DD HH:mm:ss');
     var fromDate = moment(params[0], 'YYYY-MM-DD HH:mm:ss');
+
+    console.log(fromDate);
+    console.log(toDate);
+
+    let lastDate = moment(machines[0].last_available_oee, 'YYYY-MM-DD HH:mm:ss');
+
     if (machines[0].oee[fromDate.format('YYYY-MM-DD HH:mm:ss')] == undefined) {
         $("#loading").css("display", "none");
         alert("Impossibile cambiare giorno.");
         return;
-    } else if (toDate.isSameOrBefore(fromDate)) {
+    } else if (toDate.isSameOrBefore(fromDate)) { // because starting date is before or same of to date
+        $("#loading").css("display", "none");
+        alert("Controllare parametri della ricerca.");
+        return;
+    } else if (toDate.isAfter(lastDate)) { // because is impossible to search after the last available oee
         $("#loading").css("display", "none");
         alert("Controllare parametri ricerca.");
         return;
@@ -82,36 +92,47 @@ function setTimeTo(machines, params) {
     $("#machineList").html("");
     $(".list-time").html("");
 
-    let dailyDate = moment(params[0], 'YYYY-MM-DD HH:mm:ss').format("ddd, MMM Do YYYY");
-    $("#date_from").html(dailyDate);
-    $("#date_to").html(dailyDate);
+    let dailyDateFrom = fromDate.format("ddd, MMM Do YYYY");
+    let dailyDateTo = toDate.format("ddd, MMM Do YYYY");
+    $("#date_from").html(dailyDateFrom);
+    $("#date_to").html(dailyDateTo);
 
-// mi prendo tutti i turni tra i due periodi
+
+    // used to create the entire list of shifts
+    let midnightFrom = moment(fromDate).minute(0).hour(0).second(0);
+    let midnightTo = moment(toDate).minute(0).hour(0).second(0);
+
+    // going to catch all the shifts between two periods
+    let startDate = moment(fromDate);
     let valueBetweenDate = [];
-    let startDate = moment(params[0]).hour(0).minute(0).second(0).millisecond(0);
-    let nextDay = moment(startDate).add(1, 'days');
-    while (startDate.isSameOrBefore(toDate) && startDate.isBefore(nextDay, 'days')) {
-        let e = startDate.format("YYYY-MM-DD HH:mm:ss");
-        if (startDate.isSame(fromDate)) {
-            $(".list-time-to").append("<option value='" + e + "'>" + e.substr(11, 5) + "</option>");
-            $(".list-time-from").append("<option selected value='" + e + "'>" + e.substr(11, 5) + "</option>");
-        } else if (startDate.isSame(toDate)) {
-            $(".list-time-to").append("<option selected value='" + e + "'>" + e.substr(11, 5) + "</option>");
-            $(".list-time-from").append("<option value='" + e + "'>" + e.substr(11, 5) + "</option>");
-        } else {
-            $(".list-time").append("<option value='" + e + "'>" + e.substr(11, 5) + "</option>");
-        }
+    while (startDate.isSameOrBefore(toDate)) {
         valueBetweenDate[valueBetweenDate.length] = startDate.format("YYYY-MM-DD HH:mm:ss")
         startDate.add(1, 'hours');
     }
 
-    let limitDate = moment(machines[0].last_available_oee, "YYYY-MM-DD HH:mm:ss");
-    while (startDate.isSameOrBefore(limitDate) && startDate.isBefore(nextDay, 'days')) {
 
-        let e = startDate.format("YYYY-MM-DD HH:mm:ss");
-        console.log(e);
-        $(".list-time").append("<option value='" + e + "'>" + e.substr(11, 5) + "</option>");
+
+    let limitDate = moment(machines[0].last_available_oee, "YYYY-MM-DD HH:mm:ss");
+    let nextDayFrom = moment(fromDate).add(1, 'days');
+    let nextDayTo = moment(toDate).add(1, 'days');
+    while (midnightFrom.isSameOrBefore(limitDate) && midnightFrom.isBefore(nextDayFrom, 'days')) {
+        let e = midnightFrom.format("YYYY-MM-DD HH:mm:ss");
+        if (midnightFrom.isSame(fromDate)) $(".list-time-from").append("<option value='" + e + "' selected>" + e.substr(11, 5) + "</option>");
+        else $(".list-time-from").append("<option value='" + e + "'>" + e.substr(11, 5) + "</option>");
+        midnightFrom.add(1, 'hours');
     }
+
+    while (midnightTo.isSameOrBefore(limitDate) && midnightTo.isBefore(nextDayTo, 'days')) {
+        let e = midnightTo.format("YYYY-MM-DD HH:mm:ss");
+        if (midnightTo.isSame(toDate)) $(".list-time-to").append("<option value='" + e + "' selected>" + e.substr(11, 5) + "</option>");
+        else $(".list-time-to").append("<option value='" + e + "'>" + e.substr(11, 5) + "</option>");
+        midnightTo.add(1, 'hours');
+    }
+
+    $("#prev_day_from").attr("new_time", fromDate.subtract(1, 'days').format("YYYY-MM-DD HH:mm:ss"));
+    $("#prev_day_to").attr("new_time", toDate.subtract(1, 'days').format("YYYY-MM-DD HH:mm:ss"));
+    $("#next_day_from").attr("new_time", fromDate.add(1, 'days').format("YYYY-MM-DD HH:mm:ss"));
+    $("#next_day_to").attr("new_time", toDate.add(1, 'days').format("YYYY-MM-DD HH:mm:ss"));
 
     let numItem = machines.length;
     let cont = 0;
@@ -133,10 +154,18 @@ function setTimeTo(machines, params) {
                 obj_oee.quality += current_oee.quality;
             }
         });
-        obj_oee.general = (obj_oee.general / totEl).toFixed(2);
-        obj_oee.availability = (obj_oee.availability / totEl).toFixed(2);
-        obj_oee.performance = (obj_oee.performance / totEl).toFixed(2);
-        obj_oee.quality = (obj_oee.quality / totEl).toFixed(2);
+        if (obj_oee.general == 0) {
+            obj_oee.status = "off";
+            obj_oee.general = 0
+            obj_oee.availability = 0;
+            obj_oee.performance = 0;
+            obj_oee.quality = 0;
+        } else {
+            obj_oee.general = (obj_oee.general / totEl).toFixed(2);
+            obj_oee.availability = (obj_oee.availability / totEl).toFixed(2);
+            obj_oee.performance = (obj_oee.performance / totEl).toFixed(2);
+            obj_oee.quality = (obj_oee.quality / totEl).toFixed(2);
+        }
 
         if (obj_oee.availability == 0) obj_oee.status = "off"
         else if (obj_oee.availability < 30) obj_oee.status = "error"
@@ -164,22 +193,39 @@ function setTimeTo(machines, params) {
 
 function goToDate(el) {
     let date;
-    if ($(el).attr("new_time") === undefined && $(el).val() == "") {
-        return;
-    } else if ($(el).attr("new_time") !== undefined) {
-        date = $(el).attr("new_time");
+    var mode = $(el).attr('id');
+    let dateFrom = $(".list-time-from").val();
+    let dateTo = $(".list-time-to").val();
+    if ($(el).attr("new_time") !== undefined) {
+        switch (mode) {
+            case "prev_day_from":
+                dateFrom = moment(dateFrom).subtract(1, 'day');
+                break;
+            case "next_day_from":
+                dateFrom = moment(dateFrom).add(1, 'day');
+                break;
+            case "prev_day_to":
+                dateTo = moment(dateTo).subtract(1, 'day');
+                break;
+            case "next_day_to":
+                dateTo = moment(dateTo).add(1, 'day');
+                break;
+            default:
+                break;
+
+        }
+        console.log(dateFrom);
+        console.log(dateTo);
         $("#loading").css("display", "block");
-        loadMachineFromDatabase(setTimeTo, [date]);
+        loadMachineFromDatabase(setTimeTo, [dateFrom, dateTo]);
     } else { // it means that it's been changed just the time and not the date
-        let dateFrom = $(".list-time-from").val();
-        let dateTo = $(".list-time-to").val();
         $("#loading").css("display", "block");
         loadMachineFromDatabase(setTimeTo, [dateFrom, dateTo]);
     }
 }
 
 function machineDetails(el) {
-    window.open("machine_oee_details.html?machine=" + $(el).attr("machineid") + "&date=" + $(".list-time").val());
+    window.open("machine_by_period_oee_details.html?machine=" + $(el).attr("machineid") + "&fromDate=" + $(".list-time-from").val() + "&toDate=" + $(".list-time-to").val());
 }
 
 $(".list-time").change(function () {
