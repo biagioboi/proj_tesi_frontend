@@ -162,7 +162,7 @@ function loadData(machine) {
     let label = [{
         index: "good_pieces",
         name: "Good Pieces",
-        color: "#F45655"
+        color: "#1CC88A"
     }, {
         index: "bad_pieces",
         name: "Bad Pieces",
